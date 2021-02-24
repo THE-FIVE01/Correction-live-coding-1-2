@@ -23,7 +23,7 @@ void main(List<String> arguments) {
     var resutatNbrealeatoire = lancerDeDee(nomJoueur);
     robot.sante = robot.sante - resutatNbrealeatoire;
 
-    print('Bot -> santé : ${robot.sante}');
+    print('Bot -> santé : ${robot.sante}%');
     compteur++;
     print('Fin du tour $compteur\n');
 
