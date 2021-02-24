@@ -8,10 +8,10 @@ void main(List<String> arguments) {
   // 1 - creation de l'Objet Bot avec force 100 et sante 1
   final bot = Robot(sante: 100, force: 1);
 
-  // lireText est une fonction qui peremet de recuperer le speudo
+  // lireText est une fonction qui permet de recuperer le speudo
   final username = lireText('Entrez votre pseudo :');
 
-// creation de l'Objet Plqyers avec force 100 et sante 1
+// creation de l'Objet Players avec force 100 et sante 1
   final player = Players(sante: 100, force: 1);
 
   // Le pseudo que je recupere dois etre stocker dans player
