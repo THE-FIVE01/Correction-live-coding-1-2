@@ -50,6 +50,11 @@ void main(List<String> arguments) {
     // si tourDuJoueur avait une valeur false => elle devient alors true pour passer la main
     tourDuJoueur = !tourDuJoueur;
   } while (bot.sante > 0 && player.sante > 0);
-
-  print('Le bot a été vaincu !');
+  
+  if (player.sante < 0) {
+    print('Le player a été vaincu !');
+  } else {
+    print('Le bot a été vaincu !');
+  }
+  
 }
