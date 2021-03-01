@@ -1,7 +1,10 @@
 import 'dart:math';
 
+// ignore: avoid_relative_lib_imports
 import '../lib/classe_bot.dart';
+// ignore: avoid_relative_lib_imports
 import '../lib/classe_player.dart';
+// ignore: avoid_relative_lib_imports
 import '../lib/utils.dart';
 
 void main(List<String> arguments) {
