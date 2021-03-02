@@ -1,3 +1,10 @@
+import '../lib/classe_robot.dart';
+
 void main(List<String> arguments) {
-  print('Hello world!');
+  
+
+  // création des robots
+  
+ 
+  final robot1 = Robot(deplacerrobot: ,);
 }
