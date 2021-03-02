@@ -38,13 +38,13 @@ void main(List<String> arguments) {
     // lorsque le tour du joeur est true il attaque le bot
     // dans le cas contraire le bot attack
     if (tourDuJoueur) {
-      attackBot(player, bot);
+      bot.attackBot(player, bot);
     } else {
-      attackPlayer(bot, player);
+      player.attackPlayer(bot, player);
     }
 
-    displayBot(bot);
-    displayPlayer(player);
+    bot.displayBot(bot);
+    player.displayPlayer(player);
 
     compteur++;
     print('Fin du tour $compteur\n');
