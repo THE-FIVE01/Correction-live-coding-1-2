@@ -37,7 +37,8 @@ class Robot {
   // Fonctions / Méthodes
 
   void presentation () {
-    print("Bonjour je m'appelle ${this.robotName}. J'ai ${this.vie} points de vie et je me déplace à ${this.vitesseMax} cases par seconde. Je suis à la case de coordonnées ${this.position} .");
+    print("____________________________________________________");
+    print("Bonjour je m'appelle ${this.robotName} je suis un robot gentille. J'ai ${this.vie} points de vie et je me déplace à ${this.vitesseMax} cases par seconde. Je suis à la case de coordonnées ${this.position} .");
   }
 
 // void  seDeplacerVers(String action, int vitesse) {

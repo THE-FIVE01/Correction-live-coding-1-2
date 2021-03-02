@@ -1,5 +1,6 @@
 import 'dart:io';
 import '../lib/classe_robot.dart';
+import '../lib/mechants.dart';
 
 void main(List<String> arguments) {
   
@@ -22,9 +23,16 @@ void main(List<String> arguments) {
   // robot1.seDeplacerVers('h',1);
   // robot1.seDeplacerVers('h',3);
   // robot1.seDeplacerVers('b',2);
-
-  List<Robot> robots = [robot1,robot2,robot3,robot4];
   
+  List<Robot> robots = [robot1,robot2,robot3,robot4];
+
+  // Création de Méchants Robots 
+
+  final mechants1 = Mechants(mechantName: 'RAPTOR-B52',position: [0,0], pointsDommage: 18, degatDistance: true);
+  final mechants2 = Mechants(mechantName: 'RAPTOR-C142',position: [0,3], pointsDommage: 8, degatDistance: false);
+  final mechants3 = Mechants(mechantName: 'RAPTOR-XX13',position: [0,0], pointsDommage: 20, degatDistance: true);
+
+  List<Mechants> mechants = [mechants1,mechants2,mechants3];
   
 
   // Présentation des différents robbots
@@ -33,6 +41,25 @@ void main(List<String> arguments) {
   print("========= PRESENTATION DES ROBOTS : ");
   // robots.forEach((element) {element.presentation();});
   robots.forEach((element) {element.presentation();});
+  mechants.forEach((element) {element.presentation();});
+  print("____________________________________________");
+
+  
+  // ________________
+mechants.forEach((mechantsRobot) { 
+  do {
+    if (mechantsRobot.degatDistance) {
+      mechantsRobot.attaquerCible(mechantsRobot, robots[0]);
+    } else {
+      print("le méchant robot : ${mechantsRobot.mechantName} ne peut pas attaquer le robot gentille : ${robots[0].robotName} à distance il n'a pas la fonction Dégât à distance");
+      break;
+    }
+    mechantsRobot.degatDistance = !mechantsRobot.degatDistance;
+  } while (mechantsRobot.degatDistance);
+});
+  
+
+  //__________________
   
 
   // for (var i = 0; i < robots.length; i++) {
@@ -55,6 +82,7 @@ void main(List<String> arguments) {
   print("\n");*/
 
   // robot1.seDeplacerVers();
+
   
 
 
