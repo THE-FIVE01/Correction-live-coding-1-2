@@ -189,7 +189,7 @@ void main(List<String> arguments) {
       Company("Hoeger LLC","Centralized empowering task-force","target end-to-end models"),
   );
 
-  List users = [user1,user2,user3,user4,user4,user5,user6,user7,user8,user9,user10];
+  List<Users> users = [user1,user2,user3,user4,user4,user5,user6,user7,user8,user9,user10];
   var ville = 'Abidjan';
   print("==========where()=============");
   var us = users.where((element) => element.adresse.street.contains(ville)).toList();
