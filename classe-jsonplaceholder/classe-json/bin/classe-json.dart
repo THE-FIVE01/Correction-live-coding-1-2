@@ -22,6 +22,8 @@ void main(List<String> arguments) {
   final post9 = Posts(userId: 1, id: 9, title: 'eum et est occaecati', body: 'ullam et saepe reiciendis voluptatem adipisci suscipit  expedita');
   final post10 = Posts(userId: 1, id: 10, title: 'nesciunt quas odio', body: 'repudiandae veniam quaerat sunt tempore vitae sequi sint ');
 
+  List posts = [post1,post2,post3,post4,post5,post6,post7,];
+
   // Création d'instances de classe Coments
 
   final comment1 = Comments(postId: 1, id: 1, name: 'id labore ex et quam laborum', email: 'Eliseo@gardner.biz', body: 'laudantium enim quasi est quidem magnam');
@@ -142,6 +144,17 @@ void main(List<String> arguments) {
       Company("Considine-Lockman","Synchronised bottom-line interface","e-enable innovative applications"),
   );
 
+  final user7 = Users(
+      7,
+     "Kurtis Weissnat",
+      "Elwyn.Skiles",
+      "Telly.Hoeger@billy.biz",
+      Adresse("Rex Trail","Suite 280","Howemouth", "58804-1099", Geo(24.8918, 21.8984)),
+      "210.067.6132",
+      "elvis.io",
+      Company("Johns Group","Configurable multimedia task-force","generate enterprise e-tailers"),
+  );
+
   
   final user8 = Users(
       8,
@@ -175,6 +188,8 @@ void main(List<String> arguments) {
       "ambrose.net",
       Company("Hoeger LLC","Centralized empowering task-force","target end-to-end models"),
   );
+
+  List users = [user1,user2,user3,user4,user4,user5,user6,user7,user8,user9,user10];
 
 
 
