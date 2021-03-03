@@ -108,7 +108,74 @@ void main(List<String> arguments) {
       "ramiro.info",
       Company("DRomaguera-Jacobson","Face to face bifurcated interface","strategic applications"),
   );
+
+  final user4 = Users(
+      4,
+     "Patricia Lebsack",
+      "Karianne",
+      "Julianne.OConner@kory.org",
+      Adresse("Hoeger Mall","Apt. 692","South Elvis", "53919-4257", Geo(29.4572, -164.2990)),
+      "493-170-9623 x156",
+      "kale.biz",
+      Company("Robel-Corkery","Multi-tiered zero tolerance productivity","transition cutting-edge web services"),
+  );
+
+  final user5 = Users(
+      5,
+     "Chelsey Dietrich",
+      "Kamren",
+      "Lucio_Hettinger@annie.ca",
+      Adresse("Skiles Walks","Suite 351","Roscoeview", "33263", Geo(-31.8129, 62.5342)),
+      "(254)954-1289",
+      "demarco.info",
+      Company("Keebler LLC","User-centric fault-tolerant solution","revolutionize end-to-end systems"),
+  );
+
+  final user6 = Users(
+      6,
+     "Mrs. Dennis Schulist",
+      "Leopoldo_Corkery",
+      "Karley_Dach@jasper.info",
+      Adresse("Norberto Crossing","Apt. 950","South Christy", "23505-1337", Geo(-71.4197, 71.7478)),
+      "1-477-935-8478 x6430",
+      "ola.org",
+      Company("Considine-Lockman","Synchronised bottom-line interface","e-enable innovative applications"),
+  );
+
   
+  final user8 = Users(
+      8,
+     "Nicholas Runolfsdottir V",
+      "Maxime_Nienow",
+      "Sherwood@rosamond.me",
+      Adresse("Ellsworth Summit","Suite 729","Aliyaview", "45169", Geo(-14.3990, -120.7677)),
+      "586.493.6943 x140",
+      "jacynthe.com",
+      Company("Abernathy Group","Implemented secondary concept","e-enable extensible e-tailers"),
+  );
+
+  final user9 = Users(
+      9,
+     "Glenna Reichert",
+      "Delphine",
+      "Chaim_McDermott@dana.io",
+      Adresse("Dayna Park","Suite 449","Bartholomebury", "76495-3109", Geo(24.6463, -168.8889)),
+      "775)976-6794 x41206",
+      "conrad.com",
+      Company("Yost and Sons","Switchable contextually-based project","aggregate real-time technologies"),
+  );
+
+  final user10 = Users(
+      10,
+     "Clementina DuBuque",
+      "Moriah.Stanton",
+      "Rey.Padberg@karina.biz",
+      Adresse("Kattie Turnpike","Suite 198","Lebsackbury", "31428-2261", Geo(-38.2386, 57.2232)),
+      "024-648-3804",
+      "ambrose.net",
+      Company("Hoeger LLC","Centralized empowering task-force","target end-to-end models"),
+  );
+
 
 
 }
