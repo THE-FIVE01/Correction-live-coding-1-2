@@ -55,39 +55,46 @@ void main(List<String> args) {
   print(fruits);
   print("__________________");
 
-  // 9 - inserer plusieurs éléments dans la liste de fruits à partir d'une position(index) - insertAll();
+  // inserer plusieurs éléments dans la liste de fruits à partir d'une position(index) - insertAll();
   print("____ insertAll() _____");
-  fruits.insertAll(6, ['Ananas','Anone','Aronia','Avocat','Banane','Bergamote','Bibasse','Bigaradier','Bleuet','Brugnon','Cacahuète','Caïmite','Calamondin','Camerise','Canneberge','Carambole','Cassis','CédratCerise']);
+  fruits.insertAll(6, ['Ananas','Anone','Aronia','Avocat','Banane','Bergamote','element','Bigaradier','Bleuet','Abricot','Cacahuète','Caïmite','Calamondin','Camerise','Canneberge','Carambole','Cassis','CédratCerise']);
   print(fruits);
   print("__________________");
 
-  // 10 - Retourne un nouvel Itérable avec des éléments qui sont créés en appelant f sur chaque élément de cet Itérable dans l'ordre d'itération.
+  // 8 - remove - removeAt - supprimer 1 élément à partir de son nom / à partir de sa clé
+  print("____ remove() & removeAt() _____");
+  fruits.remove('Cassis'); // retirer Cassis de la liste
+  fruits.removeAt(2); // retirer Açaï de la liste
+  print(fruits);
+  print("__________________");
+
+
+  // 9 -  map() Parcour les élément de la liste et permet de faire des opérations ou actions sur ces éléments
   //var elementfruits = fruits;
   print("____ map() _____");
   var r = fruits.map((e) => e + '_1' ).toList();
-  if (r != ' ') {
-    print(r);
-  } else {
-    print('erreur');
-  }
+  print(r);
   print("__________________");
 
-  // 11 - where()
+  // 10 - where() Parcour les élément de la liste et permet de retourner les éléments de la liste qui respecte la condition  items == 'element'
   print("____ where() _____");
-  var w = fruits.where((items) => items).toList();
-  if (w == 'Amande' || w == 'Ananas') {
-    print(w);
-  }
+  var w = fruits.where((items) => items == 'element').toList();
+  print(w);
   print("__________________");
 
-  // 12 - firstwhere()
+  // 11 - firstwhere() sur la liste de fruits r = fruits de la methode n 10 - retourne le premier élément qui respecte la condition items1 == 'Abricot_1'
   print("________ firstwhere() __________");
-  var fw = fruits.firstWhere((items1) => items1);
+  var fw = r.firstWhere((items1) => items1 == 'Abricot_1', orElse: () {
+            return null;
+  });
   print(fw);
 
   print("__________________");
   
-  // 13 - list.from()
+  // 12 - list.from() - créer une list à partir d'une autre r = fruits;
+  var newlist = List.from(r);
+  print(newlist);
+  print("__________________");
 
   
 
