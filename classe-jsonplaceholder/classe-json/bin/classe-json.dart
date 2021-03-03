@@ -1,6 +1,6 @@
 //  importation de classes
 
-import 'dart:html';
+
 
 import '../lib/class-posts.dart';
 import '../lib/class-comments.dart';
@@ -22,7 +22,7 @@ void main(List<String> arguments) {
   final post9 = Posts(userId: 1, id: 9, title: 'eum et est occaecati', body: 'ullam et saepe reiciendis voluptatem adipisci suscipit  expedita');
   final post10 = Posts(userId: 1, id: 10, title: 'nesciunt quas odio', body: 'repudiandae veniam quaerat sunt tempore vitae sequi sint ');
 
-  List posts = [post1,post2,post3,post4,post5,post6,post7,];
+  List posts = [post1,post2,post3,post4,post5,post6,post7,post8,post9,post10];
 
   // Création d'instances de classe Coments
 
@@ -190,6 +190,22 @@ void main(List<String> arguments) {
   );
 
   List users = [user1,user2,user3,user4,user4,user5,user6,user7,user8,user9,user10];
+  var ville = 'Abidjan';
+  print("==========where()=============");
+  var us = users.where((element) => element.adresse.street.contains(ville)).toList();
+  print(us);
+  print("==========forEach=============");
+  us.forEach((element) {
+  print("je m'appelle ${element.name} je vie à ${element.adresse.street}");
+  print("=========firstWhere()==============");
+  var res = users.firstWhere((element) => element.id == 1);
+
+  print("id = ${res.id} - je m'appelle ${res.name} je vie à ${res.adresse.street}");
+
+  });
+
+
+  //foreach  firstwhere id street posts
 
   
 
