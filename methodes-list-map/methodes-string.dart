@@ -99,7 +99,7 @@ void main(List<String> args) {
   print("");
   String y = email;
   var symbole = '@';
-  y.indexOf(symbole,3);
+  y.indexOf(symbole);
   print(y);
   
   print("________________________________________________________Fin");
