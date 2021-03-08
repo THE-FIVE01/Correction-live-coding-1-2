@@ -76,12 +76,12 @@ void main(List<String> args) {
   print("\n");
   print("6 : trim() retrancher les espaces dans une chaine ------------------------------");
   print("");
-  var phrase = "Bonjour je m'appele tialao et je suis développeur Flutter";
+  var phrase = "           Bonjour je m'appele tialao et je suis développeur Flutter            ";
   print(phrase);
   print("nouvelle phrase sans les espaces");
   var newphrase = phrase.trim();
-  var x = identical(phrase,newphrase);
-  print(x);
+  //var x = (phrase,newphrase);
+  print(newphrase);
   print("________________________________________________________Fin");
 
   print("\n");
@@ -89,8 +89,8 @@ void main(List<String> args) {
   print("");
   String r = phrase;
   var car = 'et';
-  r.replaceAll(car, '&');
-  print(r);
+  var remplace = r.replaceAll(car, '&');
+  print(remplace);
   
   print("________________________________________________________Fin");
 
@@ -99,8 +99,8 @@ void main(List<String> args) {
   print("");
   String y = email;
   var symbole = '@';
-  y.indexOf(symbole);
-  print(y);
+  var index = y.indexOf(symbole);
+  print(index);
   
   print("________________________________________________________Fin");
 
@@ -109,8 +109,8 @@ void main(List<String> args) {
   print("");
   String z = email;
   var symbo = '@';
-  z.lastIndexOf(symbo,3);
-  print(z);
+  var lastIndex = z.lastIndexOf(symbo,3);
+  print(lastIndex);
   
   print("________________________________________________________Fin");
 

@@ -15,7 +15,7 @@ void main(List<String> args) {
   print(fruits);
   print("__________________");
 
-  // 3 - mettre lés élemnt du de la liste en ordre - sort();
+  // 3 - mettre lés élement du de la liste en ordre - sort();
   //fruits.sort();
   print(fruits);
   print("__________________");

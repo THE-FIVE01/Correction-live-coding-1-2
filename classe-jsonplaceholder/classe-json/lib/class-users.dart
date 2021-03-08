@@ -39,7 +39,6 @@ class  Adresse {
   // Constructeur ou init
   Adresse(this.street, this.suite, this.city, this.zipcode, this.geolocalisation);
  
-
 }
 // Création de la classe Geo
 class Geo {
