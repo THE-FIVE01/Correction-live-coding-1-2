@@ -68,13 +68,12 @@ void main(List<String> args) {
   print("Ont coupe le '.com' et ont le remplace ");
   print("..............");
   var couper = email.split('.com'); // on coupe le .com pour le remplacer ensuite par le .fr
-  print("Email avec le '.com' remplacer par le '.fr ");
-  var newEmail = email + '.fr';
-  print(newEmail);
+  print("Email avec le '.com'");
+  print(couper);
   print("________________________________________________________Fin");
 
   print("\n");
-  print("6 : trim() retrancher les espaces dans une chaine ------------------------------");
+  print("6 : trim() retrancher les espaces avant et après une chaine ------------------------------");
   print("");
   var phrase = "           Bonjour je m'appele tialao et je suis développeur Flutter            ";
   print(phrase);
@@ -87,7 +86,7 @@ void main(List<String> args) {
   print("\n");
   print("7 : replaceAll() remplacer un élément donné dans une chaine ------------------------------");
   print("");
-  String r = phrase;
+  String r = newphrase;
   var car = 'et';
   var remplace = r.replaceAll(car, '&');
   print(remplace);
