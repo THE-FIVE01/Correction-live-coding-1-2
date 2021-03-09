@@ -60,12 +60,20 @@ class  _Home extends State<Home> {
               ),
             ),
             Card(
+              elevation: 10.0,
               child: Container(
                 color: Colors.blue,
                 width: MediaQuery.of(context).size.width / 1.5,
                 height: 200.0,
-                child: Image.asset('images/the-five.jpeg'),
+                child: Image.asset(
+                  'images/the-five.jpeg',
+                  fit: BoxFit.cover,
+                ),
               ),
+            ),
+            Container(
+              height: 75.0,
+              color: Colors.red,
             ),
           ],
         ),
