@@ -1,0 +1,42 @@
+body: Container(
+        color: Colors.blue,
+        // height: MediaQuery.of(context).size.height / 2,
+        // width: MediaQuery.of(context).size.width / 3,
+        // margin: EdgeInsets.all(10.0),
+        margin: EdgeInsets.only(top: 10, bottom: 35), // marge sur le s côtés
+        child: Center(
+          // child: Container(
+          //   width: 50.0,
+          //   height: 125,
+          //   color: Colors.white,
+          // ),
+          // child: Card(
+          //   elevation: 10.0,
+          //   color: Colors.yellow,
+          //   child: Container(
+          //     width: MediaQuery.of(context).size.width / 1.5,
+          //     height: 250.0,
+          //     child: Image.network(
+          //       'https://codabee.com/wp-content/uploads/2018/03/cropped-Artboard-2.png',
+          //       fit: BoxFit.cover,
+          //     ),
+          //     // child: Image.asset(
+          //     //   'images/the-five.jpeg',
+          //     //   fit: BoxFit.cover,
+          //     //   ),
+          //   ),
+          // ),
+          // child: Text(
+          //   "the-five-coding.com - Apprenez le développement d'application mobile avec flutter facilement",
+          //   textAlign: TextAlign.center,
+          //   textScaleFactor: 2.0,
+          //   style: TextStyle(
+          //     color: Colors.white,
+          //     fontSize: 20,
+          //     fontStyle: FontStyle.italic,
+          //   ),
+          //   //maxLines: 2,
+           
+          // ),
+        ),
+      ),
