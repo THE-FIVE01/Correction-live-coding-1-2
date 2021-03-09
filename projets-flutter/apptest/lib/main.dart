@@ -99,7 +99,7 @@ class  _Home extends State<Home> {
             ), 
             ElevatedButton(
               onPressed: boutonAppuye,
-              child: Text('je sui plus haut que toi', textScaleFactor: 1.5),
+              child: Text('je suis plus haut que toi', textScaleFactor: 1.5),
               style: ElevatedButton.styleFrom(
                 primary: Colors.red,
                 onPrimary: Colors.white,
