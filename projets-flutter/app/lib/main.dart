@@ -71,11 +71,12 @@ class Home extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: Text(
-                "We'll share a few curated listings and estimated listing price",
+                "We'll share a few curated listings and your estimated listing price",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
+                //softWrap: true,
                 
               ),
             ),
