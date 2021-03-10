@@ -37,10 +37,9 @@ class Home extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.deepOrange,
                 borderRadius: BorderRadius.circular(150),
-                
                 image: DecorationImage(
                   image: AssetImage("images/thefive.jpeg"),
-                  fit: BoxFit.cover
+                  fit: BoxFit.cover,
                   ),
               ),
             ),
