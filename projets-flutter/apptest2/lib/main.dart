@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
             ),
             Text(
               '___Profil___',
-              style: TextStyle(color: Colors.deepOrange, fontSize: 25, fontWeight: FontWeight.bold, ),
+              style: TextStyle(color: Colors.deepOrange, fontSize: 25, fontWeight: FontWeight.bold, decoration: TextDecoration.underline ),
             ),
             Container(
               child: Center(
@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.account_circle_rounded, color: Colors.blue, size: 35,),
+                          child: Icon(Icons.account_circle_rounded, color: Colors.blue, size: 30,),
                         ),
                         Text(
                             'Tialao Nahoussé',
@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
                         
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.email_rounded, color: Colors.blue, size: 35,)
+                          child: Icon(Icons.email_rounded, color: Colors.blue, size: 30,)
                         ),
                         Text(
                             'tialaonahousse@gmail.com',
@@ -93,7 +93,7 @@ class Home extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.phone_android_rounded, color: Colors.blue, size: 35,),
+                          child: Icon(Icons.phone_android_rounded, color: Colors.blue, size: 30,),
                         ),
                         Text(
                             '(+225) 0749360078',
