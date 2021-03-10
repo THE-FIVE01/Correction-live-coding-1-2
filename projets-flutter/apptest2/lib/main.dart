@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.account_circle_rounded, color: Colors.blue,),
+                          child: Icon(Icons.account_circle_rounded, color: Colors.blue, size: 35,),
                         ),
                         Text(
                             'Tialao Nahoussé',
@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
                         
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.email_rounded, color: Colors.blue,)
+                          child: Icon(Icons.email_rounded, color: Colors.blue, size: 35,)
                         ),
                         Text(
                             'tialaonahousse@gmail.com',
@@ -93,7 +93,7 @@ class Home extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 10),
-                          child: Icon(Icons.phone_android_rounded, color: Colors.blue,),
+                          child: Icon(Icons.phone_android_rounded, color: Colors.blue, size: 35,),
                         ),
                         Text(
                             '(+225) 0749360078',
