@@ -30,19 +30,19 @@ class Home2 extends StatelessWidget{
             padding: const EdgeInsets.only(left: 17),
             child: InkWell(
               onTap: () => print("press arrow btn"),
-                        child: Container(
-                  //margin: EdgeInsets.only(right: 280),
-                  //padding: EdgeInsets.all(10),
-                  width: 50,
-                  //height: 30,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 0.5),
-                    borderRadius: BorderRadius.circular(15)
-                  ),
-                  child: Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: Colors.grey,
-                  ),
+              child: Container(
+              //margin: EdgeInsets.only(right: 280),
+              //padding: EdgeInsets.all(10),
+              width: 50,
+              //height: 30,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey, width: 0.5),
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.grey,
+              ),
               ),
             ),
           ),
@@ -51,19 +51,19 @@ class Home2 extends StatelessWidget{
             padding: const EdgeInsets.only(right: 17),
             child: InkWell(
               onTap: () => print("press btn bookmark"),
-                        child: Container(
-                  //margin: EdgeInsets.only(right: 17),
-                  //padding: EdgeInsets.all(10),
-                  width: 50,
-                  //height: 30,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 0.5),
-                    borderRadius: BorderRadius.circular(15)
-                  ),
-                  child: Icon(
-                    Icons.bookmark_rounded,
-                    color: Colors.grey,
-                  ),
+              child: Container(
+              //margin: EdgeInsets.only(right: 17),
+              //padding: EdgeInsets.all(10),
+              width: 50,
+              //height: 30,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey, width: 0.5),
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Icon(
+                Icons.bookmark_rounded,
+                color: Colors.grey,
+              ),
               ),
             ),
           ),
@@ -294,7 +294,7 @@ class Home2 extends StatelessWidget{
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      
+
                       InkWell(
                         onTap: () => print("press btn message"),
                           child: Container(
@@ -322,7 +322,7 @@ class Home2 extends StatelessWidget{
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey, width: 0.5),
                             borderRadius: BorderRadius.circular(15),
-                            color: Colors.green
+                            color: Colors.green,
                           ),
                           child: Icon(
                             Icons.phone_rounded,
