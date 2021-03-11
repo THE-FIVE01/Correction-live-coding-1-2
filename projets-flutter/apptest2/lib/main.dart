@@ -115,7 +115,7 @@ class Home extends StatelessWidget {
                 print('Vous avez appuyé sur le bouton se connecter');
               }, 
               child: Text(
-                'Se connecté',
+                'Se connecter',
                 style: TextStyle(fontSize: 20),
               ),
               style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
