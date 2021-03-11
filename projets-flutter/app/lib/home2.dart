@@ -294,36 +294,43 @@ class Home2 extends StatelessWidget{
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 10),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey, width: 0.5),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(
-                          Icons.message_rounded,
-                          color: Colors.grey,
-                          size: 25,
+                      
+                      InkWell(
+                        onTap: () => print("press btn message"),
+                          child: Container(
+                          margin: EdgeInsets.only(left: 10),
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 0.5),
+                            borderRadius: BorderRadius.circular(15),
                           ),
+                          child: Icon(
+                            Icons.message_rounded,
+                            color: Colors.grey,
+                            size: 25,
+                            ),
+                        ),
                       ),
 
-                       Container(
-                        margin: EdgeInsets.only(left: 10),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey, width: 0.5),
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.green
-                        ),
-                        child: Icon(
-                          Icons.phone_rounded,
-                          color: Colors.white,
-                          size: 30,
+                       InkWell(
+                         onTap: () => print("press btn call"),
+                          child: Container(
+                          margin: EdgeInsets.only(left: 10),
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 0.5),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.green
                           ),
+                          child: Icon(
+                            Icons.phone_rounded,
+                            color: Colors.white,
+                            size: 30,
+                            ),
                       ),
+                       ),
                     ],
                   ),
                 ),
