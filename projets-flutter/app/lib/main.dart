@@ -344,8 +344,16 @@ class Home2 extends StatelessWidget{
                 ),
               ],
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             
+            Divider(
+              color: Colors.blueGrey,
+              height: 0.1,
+              thickness: 0.5,
+              indent: 40,
+              endIndent: 40,
+            ),
+            SizedBox(height: 30),
 // Bouton Book now ------------------------------------------------------------
             Center(
               child: Container(
