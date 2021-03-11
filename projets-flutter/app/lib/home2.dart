@@ -127,7 +127,7 @@ class Home2 extends StatelessWidget{
                   ),
                 
                   Container(
-                    margin: EdgeInsets.only(left: 5),
+                    margin: EdgeInsets.only(left: 2),
                     child: Text(
                         '(256 Reviews)',
                         style: TextStyle(
