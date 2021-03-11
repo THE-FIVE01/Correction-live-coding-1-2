@@ -47,19 +47,25 @@ class Home2 extends StatelessWidget{
             ),
           ),
           Spacer(),
-          Container(
-              margin: EdgeInsets.only(right: 17),
-              //padding: EdgeInsets.all(10),
-              width: 50,
-              //height: 30,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey, width: 0.5),
-                borderRadius: BorderRadius.circular(15)
+          Padding(
+            padding: const EdgeInsets.only(right: 17),
+            child: InkWell(
+              onTap: () => print("press btn bookmark"),
+                        child: Container(
+                  //margin: EdgeInsets.only(right: 17),
+                  //padding: EdgeInsets.all(10),
+                  width: 50,
+                  //height: 30,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 0.5),
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                  child: Icon(
+                    Icons.bookmark_rounded,
+                    color: Colors.grey,
+                  ),
               ),
-              child: Icon(
-                Icons.bookmark_rounded,
-                color: Colors.grey,
-              ),
+            ),
           ),
           
         ],
