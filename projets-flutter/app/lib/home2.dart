@@ -365,7 +365,6 @@ class Home2 extends StatelessWidget{
                     primary: Colors.indigoAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      
                     ),
                   
                   ) ,
