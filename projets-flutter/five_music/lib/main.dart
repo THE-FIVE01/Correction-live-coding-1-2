@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Musique> maListeDeMusique = [
     Musique(titre: 'Theme Swift', artiste: 'the-five', imagePath: 'images/un.jpg', urlsong: 'https://codabee.com/wp-content/uploads/2018/06/un.mp3'),
-    Musique(titre: 'Theme Flutter', artiste: 'the-five', imagePath: 'images/deux.jpg', urlsong: 'https://codabee.com/wp-content/uploads/2018/06/deux.mp3')
+    Musique(titre: 'Theme Flutter', artiste: 'the-five 2', imagePath: 'images/deux.jpg', urlsong: 'https://codabee.com/wp-content/uploads/2018/06/deux.mp3')
   ];
 
   //_________
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Slider(
               value: position.inSeconds.toDouble(), 
               min: 0.0,
-              max: 30.0,
+              max: 30,
               inactiveColor: Colors.white,
               activeColor: Colors.red,
               onChanged: (num d) {
