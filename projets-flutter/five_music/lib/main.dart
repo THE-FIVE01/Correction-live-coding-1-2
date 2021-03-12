@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   StreamSubscription positionSub;
   StreamSubscription stateSubscription;
   Duration position = Duration(seconds: 0);
-  Duration duree = Duration(seconds: 10);
+  Duration duree = Duration(seconds: 30);
   PlayerState status = PlayerState.stopped;
   int index = 0;
 
