@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pop/body.dart';
+import 'body.dart';
 
 class NouvellePage extends StatelessWidget {
 
