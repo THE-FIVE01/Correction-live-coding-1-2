@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: MediaQuery.of(context).size.width * 0.8,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: Image.asset(
-                  "quiz-assets/cover.jpg",
+                  "quizz-assets/cover.jpg",
                   fit: BoxFit.cover,
                 ), 
               ),
