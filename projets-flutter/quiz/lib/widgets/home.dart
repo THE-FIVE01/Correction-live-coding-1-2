@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        centerTitle: true,
+        centerTitle: true, // Centrer le titre de _MyHomePage
       ),
       body: Center(
         child: Column(
