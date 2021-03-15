@@ -63,7 +63,7 @@ class _PageQuizState extends State<PageQuizz> {
                 height: taille,
                 width: taille,
                 child: Image.asset(
-                  "quizz assets/${listeQuestions[index].imagePath}",
+                  "quizz-assets/${listeQuestions[index].imagePath}",
                   fit: BoxFit.cover,
                   ),
               ),
@@ -97,8 +97,8 @@ class _PageQuizState extends State<PageQuizz> {
 
   Future<Null> dialogue(bool b) async{
     bool bonneReponse = (b == listeQuestions[index].reponse);
-    String vrai = "quizz assets/vrai.jpg"; // Créer une image pour la vraie reponse
-    String faux = "quizz assets/faux.jpg"; // Créer une image pour la fausse reponse
+    String vrai = "quizz-assets/vrai.jpg"; // Créer une image pour la vraie reponse
+    String faux = "quizz-assets/faux.jpg"; // Créer une image pour la fausse reponse
     if (bonneReponse) {
       score++;
     } 
