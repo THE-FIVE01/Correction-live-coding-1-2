@@ -8,7 +8,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
         primarySwatch: Colors.deepOrange,
       ),
       home: MyHomePage(title: 'Quizz vrai ou faux'),
