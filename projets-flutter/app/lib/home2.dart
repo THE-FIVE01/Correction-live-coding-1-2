@@ -78,7 +78,7 @@ class Home2 extends StatelessWidget {
           children: [
             Center(
               child: Container(
-                width: 365,
+                width: 370,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey, width: 0.5),
