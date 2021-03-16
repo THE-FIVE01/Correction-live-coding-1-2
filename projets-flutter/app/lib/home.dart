@@ -17,7 +17,10 @@ class Home extends StatelessWidget {
         // leading: Icon(Icons.arrow_back_ios_rounded, color: Colors.white),
         title: Text(
           '123 main St',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
         ),
         centerTitle: false,
         actions: [
