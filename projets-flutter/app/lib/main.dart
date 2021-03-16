@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       ),
       debugShowCheckedModeBanner: false,
-      home: Home2(),
+      home: Home(),
     );
   }
 }
