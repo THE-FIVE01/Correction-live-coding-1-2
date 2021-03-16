@@ -19,7 +19,8 @@ class Home extends StatelessWidget {
           '123 main St',
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.bold
+            fontSize: 15,
+            //fontWeight: FontWeight.bold
           ),
         ),
         centerTitle: false,
@@ -39,7 +40,8 @@ class Home extends StatelessWidget {
                 'Edit adress',
                 style: TextStyle(
                   color: Colors.black,
-                  fontWeight: FontWeight.bold
+                  fontSize: 15,
+                  //fontWeight: FontWeight.bold
                 ),
               ),
               ),
@@ -59,7 +61,7 @@ class Home extends StatelessWidget {
               child: Text(
                 "We'll share a few curated listings and your estimated listing price",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 23,
                   fontWeight: FontWeight.bold,
                 ),
                 //softWrap: true,
@@ -69,7 +71,7 @@ class Home extends StatelessWidget {
 
             Container(
               width: 350,
-              height: 60,
+              height: 70,
               child: ElevatedButton(
                 onPressed: () => print("let's go"), 
                 child: Text(
