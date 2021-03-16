@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:async';
 void main() {
   runApp(MyApp());
 }
@@ -77,6 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         texteAvecStyle("Homme", color: Colors.blue, fontSize: 17.0),
                       ],
                     ),
+                    ElevatedButton(
+                      onPressed: (() => montrerPicker), 
+                      child: null
+                    ),
                     TextField(
                       keyboardType: TextInputType.number,
                       onChanged: (String string) {
@@ -104,6 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
     
   }
   //---------
+
+  Future<Null> montrerPicker() async {
+    return showDatePicker(
+      context: context, 
+      initialDate: DateTime(1900), 
+      firstDate: DateTime.now(), 
+      lastDate: DateTime.now()
+    );
+  }
   Color setColor() {
     if (genre == true) {
       return Colors.blue;
