@@ -1,0 +1,44 @@
+ String change;
+  String submitted;
+
+
+return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              TextField(
+                keyboardType: TextInputType.text,
+                onChanged: (String string) {
+                  setState(() {
+                    change = string;
+                  });
+                },
+                onSubmitted: (String string) {
+                  setState(() {
+                    submitted = string;
+                  });
+                },
+                decoration: InputDecoration(
+                  labelText: 'Entrer votre nom',
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 23
+                  ),
+                ),
+              ),
+              Text(change ?? ''),
+              Text(submitted ?? '')
+            ],
+          ),
+        ),
+      ),
+    );
