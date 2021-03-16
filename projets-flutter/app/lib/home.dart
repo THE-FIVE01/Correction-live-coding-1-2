@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
+          color: Colors.black,
           icon: Icon(Icons.arrow_back_ios_rounded),
           onPressed: () => print('Arrow back bouton')
           ),
