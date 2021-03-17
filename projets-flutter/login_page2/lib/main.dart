@@ -28,6 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  String text = "";
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -95,9 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -106,9 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Text(
                               "The-Five-World",
                               style: TextStyle(
-                                  color: Colors.grey[700],
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold),
+                                color: Colors.grey[700],
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                         ],
@@ -140,18 +141,38 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           TextField(
                             keyboardType: TextInputType.emailAddress,
+                            onChanged: (mail) {
+                              setState(() {
+                                text = mail;
+                              });
+                            },
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                filled: true,
-                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                                hintText: "E-mail",
-                                prefixIcon: Icon(
-                                  Icons.email,
-                                  color: Colors.blue[900],
-                                )),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                              hintText: "E-mail",
+                              prefixIcon: Icon(
+                                Icons.email,
+                                color: Colors.blue[900],
+                              ),
+                            ),
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          Text(
+                            text,
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              backgroundColor: Colors.white.withOpacity(0.9),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
                           SizedBox(
                             height: 20.0,
@@ -159,17 +180,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextField(
                             obscureText: true,
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                filled: true,
-                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                                hintText: "Password",
-                                prefixIcon: Icon(
-                                  Icons.lock,
-                                  color: Colors.blue[900],
-                                )),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                              hintText: "Password",
+                              prefixIcon: Icon(
+                                Icons.lock,
+                                color: Colors.blue[900],
+                              )
+                            ),
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
                           SizedBox(
                             height: 10.0,
@@ -180,7 +207,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextButton(
                                 onPressed: () {
                                   print(
-                                      "Vous avez appuyer sur Forget your password");
+                                    "Vous avez appuyer sur Forget your password"
+                                  );
                                 },
                                 style: ButtonStyle(
                                  elevation: MaterialStateProperty.all(15),
@@ -188,12 +216,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Text(
                                   "Forget your password",
                                   style: TextStyle(
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
-                                      color: Colors.red[900],
-                                      fontSize: 13.0,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.underline),
+                                    backgroundColor:
+                                        Colors.white.withOpacity(0.8),
+                                    color: Colors.red[900],
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline
+                                  ),
                                 ),
                               ),
                             ],
@@ -220,9 +249,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text(
                                 "Login",
                                 style: TextStyle(
-                                    color: Colors.blue[900],
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.blue[900],
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold
+                                ),
                               ),
                             ),
                           ),
