@@ -185,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           SizedBox(height: 40.0,),
                           Container(
                             width: 250,
-                            height: 60,
+                            height: 50,
                             decoration: BoxDecoration(
 
                             ),
@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 "Login",
                                 style: TextStyle(
                                   color: Colors.blue[900],
-                                  fontSize: 30,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
