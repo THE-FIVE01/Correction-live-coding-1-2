@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 54.0),
+                    padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 64.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             "Enter to The-Five World",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 22.0,
+                              fontSize: 20.0,
                               fontWeight: FontWeight.w300
                             ),
                           ),
