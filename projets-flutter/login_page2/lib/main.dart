@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Text(
                                   "Forget your password",
                                   style: TextStyle(
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: Colors.white.withOpacity(0.8),
                                     color: Colors.red[900],
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
