@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   style: TextStyle(
                                     backgroundColor: Colors.white.withOpacity(0.8),
                                     color: Colors.red[900],
-                                    fontSize: 20.0,
+                                    fontSize: 13.0,
                                     fontWeight: FontWeight.bold,
                                     decoration: TextDecoration.underline
                                   ),
