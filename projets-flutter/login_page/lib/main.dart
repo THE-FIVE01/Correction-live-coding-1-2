@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         SizedBox(height: 10.0,),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 70.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 60.0),
                           child: Text(
                             "The-Five World",
                             style: TextStyle(
