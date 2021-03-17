@@ -28,6 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  String text = "";
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -140,18 +142,38 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           TextField(
                             keyboardType: TextInputType.emailAddress,
+                            onChanged: (mail) {
+                              setState(() {
+                                text = mail;
+                              });
+                            },
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                filled: true,
-                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                                hintText: "E-mail",
-                                prefixIcon: Icon(
-                                  Icons.email,
-                                  color: Colors.blue[900],
-                                )),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                              hintText: "E-mail",
+                              prefixIcon: Icon(
+                                Icons.email,
+                                color: Colors.blue[900],
+                              ),
+                            ),
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          Text(
+                            text,
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              backgroundColor: Colors.white.withOpacity(0.9),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
                           SizedBox(
                             height: 20.0,
@@ -159,17 +181,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextField(
                             obscureText: true,
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                                filled: true,
-                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                                hintText: "Password",
-                                prefixIcon: Icon(
-                                  Icons.lock,
-                                  color: Colors.blue[900],
-                                )),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                              hintText: "Password",
+                              prefixIcon: Icon(
+                                Icons.lock,
+                                color: Colors.blue[900],
+                              )
+                            ),
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
                           SizedBox(
                             height: 10.0,
