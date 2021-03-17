@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 150,
                         width: 150,
+                        margin: EdgeInsets.only(top: 40, left: 30),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(150.0),
                           //color: Colors.deepOrange,
@@ -81,22 +82,25 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
-                      Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.blue[900],
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                            color: Colors.blue[900],
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                          ),
                         ),
                       ),
                       SizedBox(height: 10,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 120.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 150.0),
                         child: Text(
                           "The-Five-World",
                           style: TextStyle(
                             color: Colors.grey[700],
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold
                           ),
                         ),
