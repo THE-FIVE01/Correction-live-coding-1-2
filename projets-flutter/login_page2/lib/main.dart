@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                elevation: 10.0,
+                                elevation: 15.0,
                                 //shadowColor: Colors.limeAccent[700]
                               ),
                               child: Text(
