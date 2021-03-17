@@ -208,6 +208,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.lime.withOpacity(0.9),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                elevation: 10.0,
+                                //shadowColor: Colors.limeAccent[700]
                               ),
                               child: Text(
                                 "Login",
