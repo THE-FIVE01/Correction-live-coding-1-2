@@ -149,12 +149,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Text(
+                              TextButton(
+                               onPressed: () {
+                                 print("Vous avez appuyez sur Forget your password");
+                               },
+                               child: Text(
                                 "Forget your password",
                                 style: TextStyle(
                                   color: Colors.deepOrange[800],
                                   decoration: TextDecoration.underline,
                                 ),
+                               ),
                               ),
                             ],
                           ),
