@@ -64,10 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 24.0),
+                    padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 54.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           "Login",
@@ -78,12 +78,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         SizedBox(height: 10.0,),
-                        Text(
-                          "Enter to a beautiful World",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.w300
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Text(
+                            "Enter to a beautiful World",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.w300
+                            ),
                           ),
                         ),
                       ],
@@ -97,8 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40), // Arrondir le coté gauche
-                        topRight: Radius.circular(90) // Arrondir le coté droit
+                        topLeft: Radius.circular(90), // Arrondir le coté gauche
+                        topRight: Radius.circular(90),
+                        bottomLeft: Radius.circular(230),
+                        bottomRight: Radius.circular(230), // Arrondir le coté droit
                       ), 
                     ),
                     child: Padding(
