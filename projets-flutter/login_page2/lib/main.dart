@@ -248,9 +248,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text(
                                 "Login",
                                 style: TextStyle(
-                                    color: Colors.blue[900],
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.blue[900],
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold
+                                ),
                               ),
                             ),
                           ),
