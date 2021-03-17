@@ -74,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           borderRadius: BorderRadius.circular(150.0),
                           //color: Colors.deepOrange,
                           image: DecorationImage(
-                            image: AssetImage('assets/thefive.jpeg'),
+                            // image: AssetImage('assets/thefive.jpeg'),
+                            image: AssetImage('assets/avatar.png'),
                             fit: BoxFit.cover,
                             //alignment: Alignment.center,
                           ),
