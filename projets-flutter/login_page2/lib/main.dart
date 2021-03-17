@@ -108,9 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Text(
                               "The-Five-World",
                               style: TextStyle(
-                                  color: Colors.grey[700],
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold),
+                                color: Colors.grey[700],
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                         ],
@@ -208,7 +209,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextButton(
                                 onPressed: () {
                                   print(
-                                      "Vous avez appuyer sur Forget your password");
+                                    "Vous avez appuyer sur Forget your password"
+                                  );
                                 },
                                 style: ButtonStyle(
                                  elevation: MaterialStateProperty.all(15),
@@ -216,12 +218,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Text(
                                   "Forget your password",
                                   style: TextStyle(
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
-                                      color: Colors.red[900],
-                                      fontSize: 13.0,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.underline),
+                                    backgroundColor:
+                                        Colors.white.withOpacity(0.8),
+                                    color: Colors.red[900],
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline
+                                  ),
                                 ),
                               ),
                             ],
