@@ -182,6 +182,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   print(
                                       "Vous avez appuyer sur Forget your password");
                                 },
+                                style: ButtonStyle(
+                                 elevation: MaterialStateProperty.all(15),
+                                ),
                                 child: Text(
                                   "Forget your password",
                                   style: TextStyle(
