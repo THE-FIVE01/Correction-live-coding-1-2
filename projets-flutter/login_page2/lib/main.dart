@@ -5,7 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -44,18 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
         body: SingleChildScrollView(
           child: Container(
             constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height,
-              maxWidth: MediaQuery.of(context).size.width
-            ),
+                maxHeight: MediaQuery.of(context).size.height,
+                maxWidth: MediaQuery.of(context).size.width),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Colors.limeAccent[700],
-                  Colors.yellowAccent[700]
-                ],
-                begin: Alignment.centerRight,
-                end: Alignment.centerLeft
-              ),
+                  colors: [Colors.limeAccent[700], Colors.yellowAccent[700]],
+                  begin: Alignment.centerRight,
+                  end: Alignment.centerLeft),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -67,43 +60,58 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        margin: EdgeInsets.only(top: 40, left: 30),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(150.0),
-                          //color: Colors.deepOrange,
-                          image: DecorationImage(
-                            // image: AssetImage('assets/thefive.jpeg'),
-                            image: AssetImage('assets/avatar.png'),
-                            fit: BoxFit.cover,
-                            //alignment: Alignment.center,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 150,
+                            width: 150,
+                            margin: EdgeInsets.only(top: 40, left: 30),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(150.0),
+                              //color: Colors.deepOrange,
+                              image: DecorationImage(
+                                // image: AssetImage('assets/thefive.jpeg'),
+                                image: AssetImage('assets/avatar.png'),
+                                fit: BoxFit.cover,
+                                //alignment: Alignment.center,
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 30),
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Colors.blue[900],
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.blue[900],
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                        child: Text(
-                          "The-Five-World",
-                          style: TextStyle(
-                            color: Colors.grey[700],
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 30),
+                            child: Text(
+                              "The-Five-World",
+                              style: TextStyle(
+                                  color: Colors.grey[700],
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
@@ -115,9 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: DecorationImage(
-                        image: AssetImage('assets/tree.jpg'),
-                        fit: BoxFit.cover
-                      ),
+                          image: AssetImage('assets/tree.jpg'),
+                          fit: BoxFit.cover),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(130),
                         topRight: Radius.circular(130),
@@ -131,69 +138,70 @@ class _MyHomePageState extends State<MyHomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          TextField( 
+                          TextField(
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide.none,
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                              hintText: "E-mail",
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Colors.blue[900],
-                              )
-                              
-                            ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderSide: BorderSide.none,
+                                ),
+                                filled: true,
+                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                                hintText: "E-mail",
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Colors.blue[900],
+                                )),
                           ),
-                          SizedBox(height: 20.0,),
+                          SizedBox(
+                            height: 20.0,
+                          ),
                           TextField(
                             obscureText: true,
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide.none,
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFE7edeb).withOpacity(0.7),
-                              hintText: "Password",
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Colors.blue[900],
-                              )
-                            ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderSide: BorderSide.none,
+                                ),
+                                filled: true,
+                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                                hintText: "Password",
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.blue[900],
+                                )),
                           ),
-                          SizedBox(height: 10.0,),
+                          SizedBox(
+                            height: 10.0,
+                          ),
                           Row(
-                            mainAxisAlignment:  MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  print("Vous avez appuyer sur Forget your password");
-                                }, 
+                                  print(
+                                      "Vous avez appuyer sur Forget your password");
+                                },
                                 child: Text(
                                   "Forget your password",
                                   style: TextStyle(
-                                    backgroundColor: Colors.white.withOpacity(0.8),
-                                    color: Colors.red[900],
-                                    fontSize: 13.0,
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.underline
-                                  ),
+                                      backgroundColor:
+                                          Colors.white.withOpacity(0.8),
+                                      color: Colors.red[900],
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline),
                                 ),
                               ),
                             ],
                           ),
-                          SizedBox(height: 40.0,),
+                          SizedBox(
+                            height: 40.0,
+                          ),
                           Container(
                             width: 250,
                             height: 50,
-                            decoration: BoxDecoration(
-
-                            ),
+                            decoration: BoxDecoration(),
                             child: ElevatedButton(
                               onPressed: () {
                                 print("vous avez appuyez sur Login");
@@ -204,10 +212,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text(
                                 "Login",
                                 style: TextStyle(
-                                  color: Colors.blue[900],
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold
-                                ),
+                                    color: Colors.blue[900],
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
@@ -220,10 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-
       ),
     );
-    
   }
 }
-
