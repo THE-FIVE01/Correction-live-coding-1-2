@@ -28,7 +28,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e7e1b62ae92e80076821d7679a26c3c2017ad7b9
   String text = "";
   @override
   Widget build(BuildContext context) {
@@ -160,19 +163,32 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             style: TextStyle(
+<<<<<<< HEAD
                               color: Colors.blue[900],
                               fontSize: 20,
                               fontWeight: FontWeight.bold
                             ),
+=======
+                                color: Colors.blue[900],
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+>>>>>>> e7e1b62ae92e80076821d7679a26c3c2017ad7b9
                           ),
                           Text(
                             text,
                             style: TextStyle(
+<<<<<<< HEAD
                               color: Colors.blue[900],
                               backgroundColor: Colors.white.withOpacity(0.9),
                               fontSize: 15,
                               fontWeight: FontWeight.bold
                             ),
+=======
+                                color: Colors.blue[900],
+                                backgroundColor: Colors.white.withOpacity(0.9),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
+>>>>>>> e7e1b62ae92e80076821d7679a26c3c2017ad7b9
                           ),
                           SizedBox(
                             height: 20.0,
@@ -180,6 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextField(
                             obscureText: true,
                             decoration: InputDecoration(
+<<<<<<< HEAD
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8.0),
                                 borderSide: BorderSide.none,
@@ -197,6 +214,23 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold
                             ),
+=======
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderSide: BorderSide.none,
+                                ),
+                                filled: true,
+                                fillColor: Color(0xFFE7edeb).withOpacity(0.7),
+                                hintText: "Password",
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.blue[900],
+                                )),
+                            style: TextStyle(
+                                color: Colors.blue[900],
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+>>>>>>> e7e1b62ae92e80076821d7679a26c3c2017ad7b9
                           ),
                           SizedBox(
                             height: 10.0,
@@ -211,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   );
                                 },
                                 style: ButtonStyle(
-                                 elevation: MaterialStateProperty.all(15),
+                                  elevation: MaterialStateProperty.all(15),
                                 ),
                                 child: Text(
                                   "Forget your password",
