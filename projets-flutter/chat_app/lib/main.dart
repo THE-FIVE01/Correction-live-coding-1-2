@@ -582,7 +582,6 @@ class HomePage2  extends StatelessWidget {
                               child: Text(
                                 "+25",
                                 style: TextStyle(
-                                  color: Colors.grey,
                                   fontSize: 23,
                                   //fontWeight: FontWeight.bold
                                 ),
