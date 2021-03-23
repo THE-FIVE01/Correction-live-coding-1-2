@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Quizz vrai ou faux'),
       debugShowCheckedModeBanner: false,
       
-      
-      
     );
   }
 }

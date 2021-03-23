@@ -39,7 +39,7 @@ class _PageQuizState extends State<PageQuizz> {
   int score = 0;
 
   @override
-  void iniState() {
+  void initState() {
     super.initState();
     question = listeQuestions[index]; // Arriver directement à la première question
   }
