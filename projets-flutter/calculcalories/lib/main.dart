@@ -45,61 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
           centerTitle: true,
-          backgroundColor: setColor(),
+          backgroundColor: null,
         ),
         
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              texteAvecStyle(
-                'Remplissez tous les champs pour obtenir votre besoin journalier en calories',
-                fontSize: 17.0
-              ),
-              Card(
-                elevation: 10.0,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        texteAvecStyle("Femme", color: Colors.pink, fontSize: 17.0),
-                        Switch(
-                          value: genre, 
-                          inactiveTrackColor: Colors.pink,
-                          activeColor: Colors.blue,
-                          onChanged: (bool b) {
-                            setState(() {
-                              genre = b;
-                            });
-                          }
-                        ),
-                        texteAvecStyle("Homme", color: Colors.blue, fontSize: 17.0),
-                      ],
-                    ),
-                    ElevatedButton(
-                      onPressed: (() => montrerPicker), 
-                      child: null
-                    ),
-                    TextField(
-                      keyboardType: TextInputType.number,
-                      onChanged: (String string) {
-                        setState(() {
-                          poids = double.tryParse(string);
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Entrer votre poids en kilos.',
-                        labelStyle: TextStyle(
-                          //color: Colors.deepOrange,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              
             ],
           ),
         ),
@@ -108,31 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
     
   }
   //---------
+  Text newText(String data, {color: Colors.white, fonstsize: 15}) {
 
-  Future<Null> montrerPicker() async {
-    return showDatePicker(
-      context: context, 
-      initialDate: DateTime(1900), 
-      firstDate: DateTime.now(), 
-      lastDate: DateTime.now()
-    );
-  }
-  Color setColor() {
-    if (genre == true) {
-      return Colors.blue;
-    } else {
-      return Colors.pink;
-    }
   }
 
-  Text texteAvecStyle(String data, {color: Colors.black, fontSize: 15.0}) {
-    return Text(
-      data,
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        color: color,
-        fontSize: fontSize
-      ),
-    );
-  }
 }

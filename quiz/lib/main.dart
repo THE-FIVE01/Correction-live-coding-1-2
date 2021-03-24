@@ -99,20 +99,21 @@ class _MyHomePageState extends State<MyHomePage> {
               textScaleFactor: 1.2,
             ),
           ),
+          // element["reponse"].foreach((element2) {
+            
+          // }),
           Column(
             children: [
               Row(
                   children: [
-                    // element["rep"].foreach((element2) {
-                    //   print(element2);
-                    // })
                     Radio(
-                  value: questions.length, 
-                  groupValue: elementselectionner, 
-                  onChanged: (var b) {
-                    setState(() {
-                      elementselectionner = b;
-                    });
+                      value: questions.length, 
+                      groupValue: elementselectionner, 
+                      onChanged: (var b) {
+                      setState(() {
+                        elementselectionner = b;
+                      }
+                    );
                   }
                 ),
                 Text(
