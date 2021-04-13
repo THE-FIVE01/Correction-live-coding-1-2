@@ -68,8 +68,4 @@ Future getWeatherInfos() async {
   } catch (e) {
     print("Erreur: $e");
   }
-  
-  
-  
-  
 }

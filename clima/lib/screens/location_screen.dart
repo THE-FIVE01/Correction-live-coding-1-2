@@ -1,14 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
+import 'package:geolocator/geolocator.dart';
 
 class LocationScreen extends StatefulWidget {
+
+  final Position position;
+  const LocationScreen({Key key, this.position}) : super(key: key);
+
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+
+@override
+  void initState() {
+    // recuperation de la meteo
+    print('recuperation de la meteo dans iniState');
+    print(widget.position);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(" si mes donnee sont la => j'affiche le reste de ma page");
+    /// si mes donnee sont la => j'affiche le reste de ma page
+    ///
+    ///sinon => je met un loader
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

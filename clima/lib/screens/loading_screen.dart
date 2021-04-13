@@ -1,67 +1,54 @@
-import 'package:clima/services/location.dart';
+import 'package:clima/screens/location_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
-import 'package:http/http.dart' as http;
 
-class LoadingScreen extends StatefulWidget {
-  @override
-  _LoadingScreenState createState() => _LoadingScreenState();
-}
+class LoadingScreen extends StatelessWidget {
 
-class _LoadingScreenState extends State<LoadingScreen> {
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getLocation();
-  }
+    Future<Position> _determinePosition() async {
+      bool serviceEnabled;
+      LocationPermission permission;
 
-  void getLocation() async {
-   Location location = Location();
-   await location.getCurrentLocation();
-   print(location.latitude);
-   print(location.longitude);
-   
-    
-  }
+      serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        return Future.error('Location services are disabled.');
+      }
 
-  void getData() async {
-    var url = Uri.parse('api.openweathermap.org/data/2.5/weather?lat=35(&lon=139&appid=440687dd78810303564297d54f70cc26');
-    http.Response response = await http.get(url);
-    print(response.body);
-    if (response.statusCode == 200) {
-      String data = response.body;
-      print(data);
-    }else {
-      print(response.statusCode);
+      permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+          permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.deniedForever) {
+          // Permissions are denied forever, handle appropriately. 
+          return Future.error(
+            'Location permissions are permanently denied, we cannot request permissions.');
+        } 
+
+        if (permission == LocationPermission.denied) {
+          return Future.error(
+              'Location permissions are denied');
+        }
+      }
+      return await Geolocator.getCurrentPosition();
     }
-  }
-
-  @override
-  void deactivate() {
-    // TODO: implement deactivate
-    super.deactivate();
-    getLocation();
-  }
-  
 
   @override
   Widget build(BuildContext context) {
-    getData();
+    
     return Scaffold(
-      // body: Center(
-      //   child: ElevatedButton(
-      //     onPressed: () {
-      //       //Get the current location
-      //       getLocation();
-      //     },
-      //     child: Text('Get Location'),
-      //     style: ElevatedButton.styleFrom(
-      //       primary: Colors.blue
-      //     ),
-      //   ),
-      // ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () async{
+            print('hello world');
+            var response = await _determinePosition();
+            Navigator.push(context, MaterialPageRoute(builder: (ctx)=> LocationScreen(position: response,)));
+          },
+          child: Text('Get Location'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.blue
+          ),
+        ),
+      ),
     );
   }
 }
