@@ -64,7 +64,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       size: 50.0,
                     ),
                     style: TextButton.styleFrom(
-                      primary: Colors.orange
+                      primary: Colors.white
                     ),
                   ),
                   TextButton(
@@ -72,6 +72,9 @@ class _LocationScreenState extends State<LocationScreen> {
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
+                    ),
+                     style: TextButton.styleFrom(
+                      primary: Colors.white
                     ),
                   ),
                 ],
