@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:meteo_app/screens/location_screen.dart';
 import 'package:meteo_app/services/location.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:meteo_app/services/networking.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 const apiKeys = '440687dd78810303564297d54f70cc26';
 
@@ -11,60 +12,41 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+
+  double latitude;
+  double longitude;
+
   @override
   void initState() {
     super.initState();
-    getLocation();
-    getData();
+    getLocationData();
   }
 
-  void getLocation() async {
+  void getLocationData() async {
     Location location = Location();
     await location.getCurrentLocation();
-    print(location.latitude);
-    print(location.longitude);
-  }
+    latitude = location.latitude;
+    longitude = location.longitude;
+    
+    NetWorkHelper netWorkHelper = NetWorkHelper('https://http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKeys');
+    
+    var weatherData = await netWorkHelper.getData();
 
-  void getData() async {
-    var url = Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=$apiKeys');
-    var response = await http.get(url);
-    var data = jsonDecode(response.body);
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return LocationScreen(locationWeather: weatherData,);
+    }));
 
-    if (response.statusCode == 200) {
-      // dynamic dataFinal = data;
-      // print(data);
-
-      int condition = data['weather'][0]['id'];
-      double temperature = data['main']['temp'];
-      String cityName = data['name'];
-
-      print(temperature);
-      print(condition);
-      print(cityName);
-      
-    } else {
-      print(response.statusCode);
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // getData();
-
     return Scaffold(
-        // body: Center(
-        //   child: ElevatedButton(
-        //     onPressed: () {
-        //       //Get the current location
-        //       getLocation();
-        //     },
-        //     style: ElevatedButton.styleFrom(
-        //       primary: Colors.blue,
-        //     ),
-        //     child: Text('Get Location'),
-        //   ),
-        // ),
-        );
+        body: Center(
+          child: SpinKitChasingDots(
+            color: Colors.deepOrange,
+            size: 100.0,
+          ),
+        ),
+    );
   }
 }
