@@ -23,22 +23,24 @@ class _FoodPage2State extends State<FoodPage2> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: Icon(Icons
-                            .arrow_back_ios_outlined), //FaIcon(FontAwesomeIcons.chevronLeft),
-                        iconSize: 20,
-                        onPressed: () {},
-                        color: Colors.black,
-                      )),
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(Icons
+                          .arrow_back_ios_outlined), //FaIcon(FontAwesomeIcons.chevronLeft),
+                      iconSize: 20,
+                      onPressed: () {},
+                      color: Colors.black,
+                    )
+                  ),
                   CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: FaIcon(FontAwesomeIcons.heart),
-                        iconSize: 20,
-                        onPressed: () {},
-                        color: Colors.black,
-                      )),
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: FaIcon(FontAwesomeIcons.heart),
+                      iconSize: 20,
+                      onPressed: () {},
+                      color: Colors.black,
+                    )
+                  ),
                 ],
               ),
             ),
@@ -47,6 +49,7 @@ class _FoodPage2State extends State<FoodPage2> {
               children: [
                 Stack(
                   alignment: AlignmentDirectional.topCenter,
+                  
                   children: [
                     Container(
                       alignment: AlignmentDirectional(0, 0),
