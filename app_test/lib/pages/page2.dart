@@ -33,7 +33,7 @@ class _Page2State extends State<Page2> {
                               fit: BoxFit.cover)),
                     ),
                     Positioned(
-                      bottom: -50,
+                      bottom: -40,
                       right: 0,
                       left: 0,
                       child: Row(
@@ -100,7 +100,7 @@ class _Page2State extends State<Page2> {
                           Text(
                             "Graphic Designer",
                             style: TextStyle(
-                                color: Colors.grey,
+                                color: Color(0xFFC2C2C2),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -114,8 +114,8 @@ class _Page2State extends State<Page2> {
                         clipBehavior: Clip.none,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.grey[200]),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: Color(0xFFC2C2C2)),
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.grey,
@@ -155,7 +155,7 @@ class _Page2State extends State<Page2> {
                             child: Text(
                               "Read more",
                               style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color(0xFFC2C2C2),
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -173,7 +173,7 @@ class _Page2State extends State<Page2> {
                             "My name is Madeline and I enjoy meet new people and finding ways to help them have and uplifting experience...",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
-                                color: Colors.grey,
+                                color: Color(0xFFC2C2C2),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -242,7 +242,7 @@ class _Page2State extends State<Page2> {
                               ],
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: MediaQuery.of(context).size.height * 0.02,
                           ),
                           Container(
