@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:app_test/pages/page22.dart';
 
 class Page2 extends StatefulWidget {
   @override
@@ -20,17 +21,20 @@ class _Page2State extends State<Page2> {
                 Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.4,
-                      decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(60),
-                              bottomRight: Radius.circular(60)),
-                          image: DecorationImage(
-                              image: AssetImage('images/woman2.jpg'),
-                              fit: BoxFit.cover)),
+                    InkWell(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page22())),
+                                          child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(60),
+                                bottomRight: Radius.circular(60)),
+                            image: DecorationImage(
+                                image: AssetImage('images/woman2.jpg'),
+                                fit: BoxFit.cover)),
+                      ),
                     ),
                     Positioned(
                       bottom: -40,
