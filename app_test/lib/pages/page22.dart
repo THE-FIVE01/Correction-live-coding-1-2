@@ -71,7 +71,7 @@ class _Page22State extends State<Page22> {
                           ),
                           StackImage(
                             image: AssetImage("images/girl.jpg"),
-                            name: "Madeline, 20",
+                            name: "Madeline, 25",
                           ),
                         ],
                       ),

@@ -33,8 +33,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,13 +46,31 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Button(buttonTitle: 'Page 1', onPress: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page1())),),
+              Button(
+                buttonTitle: 'Page 1',
+                onPress: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page1())),
+              ),
               // Button(buttonTitle: 'Page 1', onPress: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page1())),),
-              SizedBox(height: 20.0,),
-              Button(buttonTitle: 'Dating App', onPress: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page2())),),
-              SizedBox(height: 20.0,),
-              Button(buttonTitle: 'Page 3', onPress: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page3())),),
-              
+              SizedBox(
+                height: 20.0,
+              ),
+              Button(
+                buttonTitle: 'Dating App',
+                onPress: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page2())),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Button(
+                buttonTitle: 'Barber Shop',
+                onPress: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page3())),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
             ],
           ),
         ),
@@ -62,6 +78,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-

@@ -92,7 +92,7 @@ class _Page2State extends State<Page2> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Madeline, 20",
+                            "Madeline, 25",
                             style: TextStyle(
                                 color: Color(0xFF272727),
                                 fontSize: 35,
@@ -133,7 +133,8 @@ class _Page2State extends State<Page2> {
                             color: Colors.grey,
                             size: 35,
                           ),
-                        )),
+                        )
+                      ),
                   ],
                 ),
                 SizedBox(
@@ -230,18 +231,19 @@ class _Page2State extends State<Page2> {
                                 ),
                                 Expanded(
                                   child: Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 10),
-                                      height: 50,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                          color: Color(0xFFFFE5BA),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      child: Text(
-                                        'Art History',
-                                        style: TextStyle(fontSize: 17),
-                                      )),
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    height: 50,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xFFFFE5BA),
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Text(
+                                      'Art History',
+                                      style: TextStyle(fontSize: 17),
+                                    )
+                                  ),
                                 ),
                               ],
                             ),
@@ -285,18 +287,19 @@ class _Page2State extends State<Page2> {
                                 ),
                                 Expanded(
                                   child: Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 10),
-                                      height: 50,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                          color: Color(0xFFFCC7E0),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      child: Text(
-                                        'Art History',
-                                        style: TextStyle(fontSize: 17),
-                                      )),
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    height: 50,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xFFFCC7E0),
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Text(
+                                      'Art History',
+                                      style: TextStyle(fontSize: 17),
+                                    )
+                                  ),
                                 ),
                               ],
                             ),
