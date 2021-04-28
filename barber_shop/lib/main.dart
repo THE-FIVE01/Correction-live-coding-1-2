@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:barber_shop/buttons/button.dart';
 import 'package:barber_shop/pages-barber/page1.dart';
 import 'package:barber_shop/pages-barber/page2.dart';
 import 'package:barber_shop/pages-barber/page3.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,8 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFEA051),
+      backgroundColor: Colors.orange[400],
       appBar: AppBar(
+        backgroundColor: Colors.orange[400],//Color(0xFFFEA051),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: FaIcon(FontAwesomeIcons.shopware, size: 50,),
+        ),
+        
         title: Text(widget.title),
         centerTitle: true,
       ),
@@ -86,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       
                       Button(
-                        buttonTitle: 'Page 1',
+                        buttonTitle: 'Barber King Details',
                         onPress: () => Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Page1())),
                       ),
@@ -94,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 20.0,
                       ),
                       Button(
-                        buttonTitle: 'Page 2',
+                        buttonTitle: 'Barber King',
                         onPress: () => Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Page2())),
                       ),
@@ -102,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 20.0,
                       ),
                        Button(
-                        buttonTitle: 'Page 3',
+                        buttonTitle: 'Sync Contact',
                         onPress: () => Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Page3())),
                       ),

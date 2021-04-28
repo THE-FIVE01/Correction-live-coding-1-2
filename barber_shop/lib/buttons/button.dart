@@ -15,10 +15,11 @@ class Button extends StatelessWidget {
         onPressed: onPress,
         child: Text(
           buttonTitle,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Color(0xFFFEA051),fontSize: 30, fontWeight: FontWeight.bold),
         ),
         style: ElevatedButton.styleFrom(
-          primary: Colors.deepOrange,
+          primary: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20)
           )

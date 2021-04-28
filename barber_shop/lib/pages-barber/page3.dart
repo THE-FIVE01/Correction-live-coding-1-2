@@ -1,3 +1,4 @@
+import 'package:barber_shop/pages-barber/page2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -20,315 +21,219 @@ class _Page3State extends State<Page3> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              //-------------------------------------------------Début - Code Image du haut ---------------------------------------
-              Container(
-                width: MediaQuery.of(context).size.width, //* 1.5,
-                height: 270,//MediaQuery.of(context).size.height * 0.3,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/pexels-midia.jpg"),
-                      fit: BoxFit.cover),
-                ),
-              ),
-              //-------------------------------------------------Fin - Code Image du haut ---------------------------------------
-              SizedBox(
-                height: 20,
-              ),
 
               SafeArea(
                 top: false,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(children: [
-                    //-------------------------------------------------Début - Code Textes du centre avec le coeur - suivie des étoiles ---------------------------------------
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Albert barber shop",
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "2972 Westheimer Rd. Illinois",
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Color(0xFFFED052),
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Color(0xFFFED052),
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Color(0xFFFED052),
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Color(0xFFFED052),
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Color(0xFFC2C2C2),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Text(
-                                  "4.7",
-                                  style: TextStyle(
-                                    color: Color(0xFFFED052),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Text(
-                                  "218 Reviews",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Container(
-                          child: CircleAvatar(
-                            backgroundColor: Color(0xFFFC4150),
-                            radius: 25,
-                            child: FaIcon(FontAwesomeIcons.heart),
-                          ),
-                        )
-                      ],
-                    ),
-                    //------------------------------------------------- Fin - Code Textes du centre avec le coeur - suivie des étoiles ---------------------------------------
-                    //
-                    //
+                  child: Column(
+                    
+                    children: [
+                    
                     SizedBox(
-                      height: 20,
+                      height: 50,
                     ),
-                    //-------------------------------------------------Début - Code Textes en Bleu avec background blue suivi du texte situé au centre de l'aplication ---------------------------------------
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              height: 50,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.blue[50],
-                                borderRadius: BorderRadius.circular(60),
-                              ),
-                              child: Text(
-                                "Men's haircut",
-                                style: TextStyle(color: Colors.blue),
-                              )),
-                        ),
-                        Expanded(
-                          child: Container(
-                              height: 50,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.blue[50],
-                                borderRadius: BorderRadius.circular(60),
-                              ),
-                              child: Text(
-                                "Hair styling",
-                                style: TextStyle(color: Colors.blue),
-                              )),
-                        ),
-                        Expanded(
-                          child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              height: 50,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.blue[50],
-                                borderRadius: BorderRadius.circular(60),
-                              ),
-                              child: Text(
-                                "Coloring",
-                                style: TextStyle(color: Colors.blue),
-                              )),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10),
-                            height: 50,
-                            width: 100,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.blue[50],
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: Text(
-                              "Shaving",
-                              style: TextStyle(color: Colors.blue),
-                            )),
-                      ],
-                    ),
-
-                    SizedBox(
-                      height: 30,
-                    ),
-
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "Sagittis officia nibh voluptatibus class, ullamco nostra sem sint. Repellat nam, facilisi? Nostra quo nisl voluptatibus earum deserunt fringilla minima.",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          height: 2
+                     
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        child: Image(
+                          image: AssetImage("images/pexels-midia.jpg"),
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
 
-                    //------------------------------------------------- Fin - Code Textes en Bleu avec background blue  suivi du texte situé au centre de l'aplication---------------------------------------
+
+                    //-------------------------------------------
                     SizedBox(
                       height: 50,
                     ),
+                   
+                    //------------------------------------------------------------------
+
+                    Text(
+                        "Find your friends",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                     SizedBox(
+                      height: 30,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        "Find your all friends in one place \n by syning your contact list.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          height: 1.5
+                        ),
+                      ),
+                    ),
+
+                    //---------------------------------------------------------------------------------------
+                     SizedBox(
+                      height: 90,
+                    ),
                     //------------------------------------------------- Début - Code Images superposées avec stack -------------------------------------------------------------------------
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              width: 60,
-                                height: 60,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 2
-                                  )
-                                ],
-                                image: DecorationImage(
-                                  image: AssetImage("images/pexels-pixabay3.jpg"),
-                                  fit: BoxFit.cover
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 55,
-                              child: Container(
+                        Container(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width * 0.9,
+                          margin: EdgeInsets.symmetric(horizontal: 50),
+                          //color: Colors.red,
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Container(
                                 width: 60,
                                 height: 60,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 2
-                                  )
-                                ],
-                                  image: DecorationImage(
-                                    image: AssetImage("images/pexels-italo-melo5.jpg"),
-                                    fit: BoxFit.cover
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 110,
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 2
-                                  )
-                                ],
-                                  image: DecorationImage(
-                                    image: AssetImage("images/pexels-justin-shaifer.jpg"),
-                                    fit: BoxFit.cover
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 165,
-                              child: Container(
-                                width: 60,
-                                height: 60,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFE3CC),
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                  BoxShadow(
+                                    BoxShadow(
                                       color: Colors.white,
                                       spreadRadius: 2
                                     )
                                   ],
-                                ),
-                                child: Text(
-                                  "+3",
-                                  style: TextStyle(
-                                    color: Color(0xFFFEA051),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold
+                                  image: DecorationImage(
+                                    image: AssetImage("images/pexels-pixabay3.jpg"),
+                                    fit: BoxFit.cover
                                   ),
-                                )
+                                ),
                               ),
-                            ),
-                          
-                          ],
+                              Positioned(
+                                left: 55,
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.white,
+                                      spreadRadius: 2
+                                    )
+                                  ],
+                                    image: DecorationImage(
+                                      image: AssetImage("images/pexels-italo-melo5.jpg"),
+                                      fit: BoxFit.cover
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 110,
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.white,
+                                      spreadRadius: 2
+                                    )
+                                  ],
+                                    image: DecorationImage(
+                                      image: AssetImage("images/pexels-justin-shaifer.jpg"),
+                                      fit: BoxFit.cover
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 165,
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFE3CC),
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.white,
+                                        spreadRadius: 2
+                                      )
+                                    ],
+                                    image: DecorationImage(
+                                      image: AssetImage("images/pexels-nitin.jpg"),
+                                      fit: BoxFit.cover
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 220,
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFE3CC),
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.white,
+                                        spreadRadius: 2
+                                      )
+                                    ],
+                                    image: DecorationImage(
+                                      image: AssetImage("images/pexels-italo.jpg"),
+                                      fit: BoxFit.cover
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                    //------------------------------------------------- Fin - Code Images superposées avec stack -------------------------------------------------------------------------
                       SizedBox(
-                      height: 50,
+                      height: 20,
                       ),
+                    //------------------------------------------------- Fin - Code Images superposées avec stack -------------------------------------------------------------------------
+                     RichText(
+                      text: TextSpan(
+                        text: 'More than ',
+                        style: TextStyle(color: Colors.grey, fontSize: 20),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '1M people', 
+                            style: TextStyle(color:  Color(0xFFFEA051),fontWeight: FontWeight.bold)
+                          ),
+                          TextSpan(
+                            text: ' using us',
+                          ),
+                        ],
+                      ),
+                    ),
+
+                      SizedBox(
+                      height: 100,
+                      ),
+                      
                     //------------------------------------------------- Début - Code Boutton Book now de couleur orangé -------------------------------------------------------------------------
                       Container(
                         width: 350,//MediaQuery.of(context).size.width * 0.8,
-                        height: 70,//MediaQuery.of(context).size.height * 0.07,
+                        height: 75,//MediaQuery.of(context).size.height * 0.07,
                         child: ElevatedButton(
-                          onPressed: () {}, 
+                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page2())), 
                           child: Text(
-                            "Book now",
+                            "Sync Contact",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold
@@ -341,7 +246,23 @@ class _Page3State extends State<Page3> {
                             )
                           ),
                         )
-                      )
+                      ),
+
+                      SizedBox(
+                      height: 40,
+                      ),
+
+                       TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Skip for now",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        )
                     ////------------------------------------------------- Fin - Code Boutton Book now de couleur orangé -------------------------------------------------------------------------
                     ]
                   ),
