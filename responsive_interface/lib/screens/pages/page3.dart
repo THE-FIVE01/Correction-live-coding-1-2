@@ -6,7 +6,7 @@ import 'package:responsive_interface/screens/usersinfos.dart';
 class Page3 extends StatefulWidget {
   Page3({Key key, this.title}) : super (key: key);
 
-  String title;
+  final String title;
 
   @override 
   _Page3State createState() => _Page3State();
@@ -58,7 +58,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: mediaQuery.width * 0.9,
                 height: mediaQuery.height * 0.07,
-                padding: EdgeInsets.symmetric(horizontal: mediaQuery.width * 0.03, vertical: mediaQuery.width * 0.02),
+                padding: EdgeInsets.symmetric(horizontal: mediaQuery.width * 0.03, vertical: mediaQuery.height * 0.02),
                 decoration: BoxDecoration(
                   color: Colors.grey[350],
                   borderRadius: BorderRadius.circular(30),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:responsive_interface/screens/page1.dart';
-import 'package:responsive_interface/screens/page2.dart';
-import 'package:responsive_interface/screens/page3.dart';
+import 'package:responsive_interface/screens/pages/page1.dart';
+import 'package:responsive_interface/screens/pages/page2.dart';
+import 'package:responsive_interface/screens/pages/page3.dart';
+import 'package:responsive_interface/screens/pages/page4.dart';
+import 'package:responsive_interface/screens/pages/page5.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: ''),
       debugShowCheckedModeBanner: false,
+      
     );
   }
 }
@@ -120,7 +124,50 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ),
                       ),
-
+                      SizedBox(height: mediaQuery.height * 0.04,),
+                      Container(
+                        height: mediaQuery.height * 0.15,
+                        width: mediaQuery.width * 0.3,
+                        decoration: BoxDecoration(
+                          //color: Colors.orange,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: ElevatedButton(
+                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => Page4())), 
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange
+                          ),
+                          child: Text(
+                            "Page 4",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ),
+                      ),
+                      SizedBox(height: mediaQuery.height * 0.04,),
+                      Container(
+                        height: mediaQuery.height * 0.15,
+                        width: mediaQuery.width * 0.3,
+                        decoration: BoxDecoration(
+                          //color: Colors.orange,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: ElevatedButton(
+                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => Page5())), 
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange
+                          ),
+                          child: Text(
+                            "Catégories Screens",
+                            style: TextStyle(
+                              fontSize: mediaQuery.height * 0.055,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -143,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(30)
                       ),
                       child: ElevatedButton(
-                        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page1())), 
+                        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Page5())), 
                         style: ElevatedButton.styleFrom(
                           primary: Colors.orange
                         ),
@@ -199,7 +246,51 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         )
                       ),
-                    )
+                    ),
+                    SizedBox(height: mediaQuery.height * 0.02,),
+                      Container(
+                        height: mediaQuery.height * 0.06,
+                        width: mediaQuery.width * 0.6,
+                        decoration: BoxDecoration(
+                          //color: Colors.orange,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: ElevatedButton(
+                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => Page4())), 
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange
+                          ),
+                          child: Text(
+                            "Page 4",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ),
+                      ),
+                      SizedBox(height: mediaQuery.height * 0.02,),
+                      Container(
+                        height: mediaQuery.height * 0.06,
+                        width: mediaQuery.width * 0.6,
+                        decoration: BoxDecoration(
+                          //color: Colors.orange,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: ElevatedButton(
+                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => Page5())), 
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange
+                          ),
+                          child: Text(
+                            "Catégories Screens",
+                            style: TextStyle(
+                              fontSize: mediaQuery.height * 0.024,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ),
+                      ),
                   ],
                 ),
               ),

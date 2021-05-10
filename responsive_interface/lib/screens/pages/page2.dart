@@ -17,7 +17,7 @@ class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
     
-  final orientation = MediaQuery.of(context).orientation;
+  //final orientation = MediaQuery.of(context).orientation;
   final mediaQuery = MediaQuery.of(context).size;
  
     return Scaffold(
