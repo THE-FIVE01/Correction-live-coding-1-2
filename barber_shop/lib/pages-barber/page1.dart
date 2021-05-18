@@ -254,11 +254,11 @@ class _Page1State extends State<Page1> {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 2
-                                  )
-                                ],
+                                    BoxShadow(
+                                      color: Colors.white,
+                                      spreadRadius: 2
+                                    )
+                                  ],
                                   image: DecorationImage(
                                     image: AssetImage("images/pexels-italo-melo5.jpg"),
                                     fit: BoxFit.cover
