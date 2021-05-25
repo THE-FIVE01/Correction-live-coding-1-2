@@ -28,3 +28,23 @@ class Button extends StatelessWidget {
     );
   }
 }
+class Voiture {
+  String marque;
+  String couleur;
+  int vitesse;
+
+  avancer() {
+    this.vitesse = vitesse + 1;
+  }
+  Voiture({this.vitesse, this.couleur, this.marque});
+  
+}
+
+
+Voiture voiture1 = Voiture(
+    marque: "toyota", 
+    couleur: "bleu", 
+    vitesse: 300
+  );
+
+Voiture voiture2 = Voiture(marque: "toyota", couleur: "rouge", vitesse: 200);
