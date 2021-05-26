@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'category_meals_screen.dart';
+import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -9,10 +9,6 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id,this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    // Navigator.of(ctx).push(MaterialPageRoute(
-    //     builder: (_) { return CategoryMealsScreen(id, title);
-    //     })
-    // );
     Navigator.pushNamed(
       ctx, 
       CategoryMealsScreen.routeName, 
@@ -39,7 +35,7 @@ class CategoryItemElement extends StatelessWidget {
   final String title;
 
   const CategoryItemElement({Key key, this.color, this.title}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,17 +56,3 @@ class CategoryItemElement extends StatelessWidget {
   }
 }
 
-// class SecondPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-
-//     var categorie = ModalRoute.of(context).settings.arguments as Map;
-//     print(categorie['id']);
-//     print(categorie['titre']);
-//     print(categorie['color']);
-
-//     return Scaffold(
-//       backgroundColor: Colors.orange,
-//     );
-//   }
-// }
