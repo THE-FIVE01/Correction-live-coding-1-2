@@ -30,16 +30,21 @@ class MyApp extends StatelessWidget {
           )
         ),
       ),
+      debugShowCheckedModeBanner: false,
       // home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
         '/' : (context)=> CategoriesScreen() ,
         CategoryMealsScreen.routeName : (context) => CategoryMealsScreen() ,
         MealDetailScreen.routeName : (context) => MealDetailScreen(),
-
-
       },
-      debugShowCheckedModeBanner: false,
+      // onGenerateRoute: (settings) {
+      //   print(settings.arguments);
+      //   return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      },
     );
   }
 }
