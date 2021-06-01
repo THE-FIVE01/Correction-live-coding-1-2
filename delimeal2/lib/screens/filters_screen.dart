@@ -21,6 +21,7 @@ class FiltersScreen extends StatelessWidget {
           ),
         ),
       ),
+    
     );
   }
 }
