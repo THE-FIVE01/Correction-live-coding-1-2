@@ -20,10 +20,7 @@ class Test extends StatelessWidget {
               title: Text(
                 product[ind].title
               ),
-              
-              
             ),
-            
           ),
         ),
       ),
