@@ -1,46 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/product_detail_screen.dart';
-// import '../models/product.dart';
-import '../widgets/product_item.dart';
-import '../providers/products.dart';
 import 'package:provider/provider.dart';
-// import '../screens/test.dart';
+import 'package:shop_app/screens/cart_screen.dart';
+import '../widgets/app_drawer.dart';
+import '../widgets/products_grid.dart';
+import '../widgets/badge.dart';
+import '../providers/cart.dart';
 
-class ProductsOverviewScreen extends StatelessWidget {
+enum FilterOptions {
+  Favorites,
+  All,
+}
 
+class ProductsOverviewScreen extends StatefulWidget {
   static const routeName = 'products-overview';
-  
+
+  @override
+  _ProductsOverviewScreenState createState() => _ProductsOverviewScreenState();
+}
+
+class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
+  var _showOnlyFavorites = false;
+
   @override
   Widget build(BuildContext context) {
-
-    final products = Provider.of<Products>(context).items;
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "test",
-        ),
-      ),
-      body: GridView.builder(
-        
-        padding: EdgeInsets.all(10),
-        itemCount: products.length, 
-        itemBuilder: (ctx, i) => InkWell(
-          onTap: () => Navigator.pushNamed(context, ProductDetailScreen.routeName),
-          child: ProductItem(
-            products[i].id,
-            products[i].title,
-            products[i].imageUrl,
-             products[i].price,
+        appBar: AppBar(
+          title: Text(
+            "MyShop",
           ),
+          actions: [
+            PopupMenuButton(
+              onSelected: (FilterOptions selectedValue) {
+                setState(() {
+                  if (selectedValue == FilterOptions.Favorites) {
+                    _showOnlyFavorites = true;
+                  } else {
+                    _showOnlyFavorites = false;
+                  }
+                });
+              },
+              icon: Icon(Icons.more_vert),
+              itemBuilder: (_) => [
+                PopupMenuItem(
+                    child: Text('Only Favorites'),
+                    value: FilterOptions.Favorites),
+                PopupMenuItem(
+                    child: Text('Show All'), value: FilterOptions.All),
+              ],
+            ),
+            Consumer<Cart>(
+              builder: (_, cart, ch) => Badge(
+                child: ch,
+                value: cart.itemCount.toString(),
+              ),
+              child: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  Navigator.pushNamed(context, CartScreen.routeName);
+                },
+              ),
+            ),
+          ],
         ),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, 
-          childAspectRatio: 3/2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10
-        ), 
-      ),
-    );
+        drawer: AppDrawer(),
+        body: ProductsGrid(_showOnlyFavorites));
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'package:shop_app/models/product.dart';
+import 'package:shop_app/providers/orders.dart';
+import 'package:shop_app/screens/cart_screen.dart';
+import './providers/cart.dart';
 import 'package:shop_app/providers/products.dart';
 import 'package:shop_app/screens/products_overview_screen.dart';
 import 'package:provider/provider.dart';
-//import 'package:shop_app/screens/test.dart';
 import 'screens/product_detail_screen.dart';
+import 'screens/orders_screens.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,21 +18,31 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => Products(),
+          create: (ctx) => Products(),
+          //value: Products(),
+        ),
+        ChangeNotifierProvider(
+          //value: Cart(),
+          create: (ctx) => Cart(),
+        ),
+        ChangeNotifierProvider(
+          //value: Cart(),
+          create: (ctx) => Orders(),
         )
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'MyShop',
         theme: ThemeData(
-          primarySwatch: Colors.purple,
-          accentColor: Colors.deepOrange,
-          fontFamily: 'Lato'
-        ),
+            primarySwatch: Colors.purple,
+            accentColor: Colors.deepOrange,
+            fontFamily: 'Lato'),
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          "/" : (ctx) => ProductsOverviewScreen(),
-          ProductDetailScreen.routeName : (ctx) => ProductDetailScreen(),
+          "/": (ctx) => ProductsOverviewScreen(),
+          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+          CartScreen.routeName: (ctx) => CartScreen(),
+          OrdersScreen.routeName: (ctx) => OrdersScreen(),
           //Test.routeName : (_) => Test(),
         },
       ),
