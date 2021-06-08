@@ -31,6 +31,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           actions: [
             PopupMenuButton(
               onSelected: (FilterOptions selectedValue) {
+                print(selectedValue);
                 setState(() {
                   if (selectedValue == FilterOptions.Favorites) {
                     _showOnlyFavorites = true;
@@ -42,10 +43,12 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               icon: Icon(Icons.more_vert),
               itemBuilder: (_) => [
                 PopupMenuItem(
-                    child: Text('Produits Favoris'),
-                    value: FilterOptions.Favorites),
+                  child: Text('Produits Favoris'),
+                  value: FilterOptions.Favorites),
                 PopupMenuItem(
-                    child: Text('Tous les produits'), value: FilterOptions.All),
+                  child: Text('Tous les produits'), 
+                  value: FilterOptions.All
+                ),
               ],
             ),
             Consumer<Cart>(

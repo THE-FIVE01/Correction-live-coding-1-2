@@ -41,11 +41,6 @@ class CartItem extends StatelessWidget {
               radius: 23,
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                // child: FittedBox(
-                //   child: Text(
-                //     '$price',
-                //   ),
-                // ),
               ),
               backgroundImage: NetworkImage(imageUrl),
             ),
