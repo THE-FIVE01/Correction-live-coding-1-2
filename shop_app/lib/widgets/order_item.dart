@@ -21,9 +21,21 @@ class _OrderItemState extends State<OrderItem> {
       child: Column(
         children: [
           ListTile(
-            title: Text('\$${widget.order.amount}'),
+            title: Text(
+              '\$${widget.order.amount}',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.w700
+              ),
+            ),
             subtitle: Text(
-                DateFormat('dd/MM/yyyy hh:mm').format(widget.order.dateTime)),
+              DateFormat('dd/MM/yyyy hh:mm').format(widget.order.dateTime),
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700
+              ),
+            ),
             trailing: IconButton(
                 icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
                 onPressed: () {
@@ -44,12 +56,17 @@ class _OrderItemState extends State<OrderItem> {
                               Text(
                                 prod.title,
                                 style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                  color: Colors.blue[900],
+                                  fontSize: 18, fontWeight: FontWeight.bold
+                                ),
                               ),
                               Text(
                                 '${prod.quantity}x \$${prod.price}',
-                                style:
-                                    TextStyle(fontSize: 18, color: Colors.grey),
+                                style: TextStyle(
+                                  fontSize: 18, 
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red
+                                ),
                               ),
                             ],
                           ))

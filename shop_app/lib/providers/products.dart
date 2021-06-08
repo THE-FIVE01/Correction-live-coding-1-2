@@ -41,29 +41,36 @@ class Products with ChangeNotifier {
 
   List<Product> get items {
     if (_showFavoritesOnly) {
+      // retourne les élément favoris
       return _items.where((prodItem) => prodItem.isFavorite).toList();
     } else {
+      // return tous les éléments
       return [..._items];
     }
   }
 
+// Liste de produits favoris
   List<Product> get favoriteItems {
     return _items.where((prodItem) => prodItem.isFavorite).toList();
   }
 
+// rechgercher un produit par id
   Product findById(String id) {
     return items.firstWhere((prod) => prod.id == id);
   }
 
+// élément favoris actif
   void showFavoritesOnly() {
     _showFavoritesOnly = true;
     notifyListeners();
   }
 
+// tous les éléments
   void showAll() {
     _showFavoritesOnly = false;
     notifyListeners();
   }
+
 
   void addProduct() {
     //items.add(value);

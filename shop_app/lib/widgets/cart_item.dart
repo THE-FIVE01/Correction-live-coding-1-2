@@ -9,8 +9,9 @@ class CartItem extends StatelessWidget {
   final double price;
   final int quantity;
   final String title;
+  final String imageUrl;
 
-  CartItem(this.id, this.productId, this.price, this.quantity, this.title);
+  CartItem(this.id, this.productId, this.price, this.quantity, this.title, this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +38,39 @@ class CartItem extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
             leading: CircleAvatar(
+              radius: 23,
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: FittedBox(
-                  child: Text(
-                    '$price',
-                  ),
-                ),
+                // child: FittedBox(
+                //   child: Text(
+                //     '$price',
+                //   ),
+                // ),
+              ),
+              backgroundImage: NetworkImage(imageUrl),
+            ),
+            title: Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700
               ),
             ),
-            title: Text(title),
-            subtitle: Text('Total: \$${price * quantity}'),
-            trailing: Text('$quantity x'),
+            subtitle: Text(
+              'Total: \$${price * quantity}',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700
+              ),
+            ),
+            trailing: Text(
+              '$quantity x',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+                color: Colors.blue[900]
+              ),
+            ),
           ),
         ),
       ),

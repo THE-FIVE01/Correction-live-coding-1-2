@@ -8,20 +8,20 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('hello Friends'),
+            title: Text('Menu - principale'),
             automaticallyImplyLeading: false, // pas de bouton de retour
           ),
           Divider(),
           ListTile(
             leading: Icon(Icons.shop),
-            title: Text('Shop'),
+            title: Text('Achats'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           ListTile(
             leading: Icon(Icons.payment),
-            title: Text('Orders'),
+            title: Text('Commandes'),
             onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(OrdersScreen.routeName);

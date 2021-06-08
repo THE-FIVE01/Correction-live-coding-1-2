@@ -13,7 +13,7 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your Cart"),
+        title: Text("Mon Panier"),
       ),
       body: Column(
         children: [
@@ -26,7 +26,7 @@ class CartScreen extends StatelessWidget {
                 children: [
                   Text(
                     "Total",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     width: 10,
@@ -34,12 +34,11 @@ class CartScreen extends StatelessWidget {
                   Spacer(),
                   Chip(
                     label: Text(
-                      "\$${cart.totalAmount..toStringAsFixed(2)}",
+                      "\$${cart.totalAmount.toStringAsFixed(2)}",
                       style: TextStyle(
-                          color: Theme.of(context)
-                              .primaryTextTheme
-                              .headline6
-                              .color),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryTextTheme.headline6.color),
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
@@ -52,8 +51,9 @@ class CartScreen extends StatelessWidget {
                       cart.clear();
                     },
                     child: Text(
-                      "ORDER NOW",
+                      "COMMANDER",
                       style: TextStyle(
+                        fontSize: 18,
                         color: Theme.of(context).primaryColor,
                       ),
                     ),
@@ -66,7 +66,7 @@ class CartScreen extends StatelessWidget {
             height: 10,
           ),
           Expanded(
-              child: ListView.builder(
+            child: ListView.builder(
             itemCount: cart.itemCount,
             itemBuilder: (ctx, i) => CartItem(
               cart.items.values.toList()[i].id,
@@ -74,6 +74,7 @@ class CartScreen extends StatelessWidget {
               cart.items.values.toList()[i].price,
               cart.items.values.toList()[i].quantity,
               cart.items.values.toList()[i].title,
+              cart.items.values.toList()[i].imageUrl,
             ),
           ))
         ],

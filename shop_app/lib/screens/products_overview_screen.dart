@@ -26,7 +26,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "MyShop",
+            "Liste de produits",
           ),
           actions: [
             PopupMenuButton(
@@ -42,10 +42,10 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               icon: Icon(Icons.more_vert),
               itemBuilder: (_) => [
                 PopupMenuItem(
-                    child: Text('Only Favorites'),
+                    child: Text('Produits Favoris'),
                     value: FilterOptions.Favorites),
                 PopupMenuItem(
-                    child: Text('Show All'), value: FilterOptions.All),
+                    child: Text('Tous les produits'), value: FilterOptions.All),
               ],
             ),
             Consumer<Cart>(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import './cart.dart';
 
+
+// gestion de la liste des produits commander
+
 class OrderItem {
   final String id;
   final double amount;
