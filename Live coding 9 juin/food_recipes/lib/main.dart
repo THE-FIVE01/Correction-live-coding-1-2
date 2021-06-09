@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
+import 'package:provider/provider.dart';
+import './ecrans/ecran_acceuil.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => FournisseurPlats(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+          accentColor: Colors.deepOrange,
+          fontFamily: 'ComicNeue'
+        ),
+        debugShowCheckedModeBanner: false,
+        //home: EcranAccueil(),
+        initialRoute: '/',
+        routes: {
+          '/': (ctx) => EcranAccueil(),
+        },
+      ),
+    );
+  }
+}
+
+
