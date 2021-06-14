@@ -9,7 +9,7 @@ class PlatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final plats = Provider.of<Plat>(context);
+    final plats = Provider.of<Plat>(context, listen: false);
 
 
     final width = MediaQuery.of(context).size.width;

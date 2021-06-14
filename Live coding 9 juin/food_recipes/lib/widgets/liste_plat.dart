@@ -1,29 +1,30 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
+import 'package:food_recipes/fournisseurs/plat.dart';
 import 'package:food_recipes/widgets/plat_item.dart';
 import 'package:provider/provider.dart';
 
 
 class ListPlats extends StatelessWidget {
-  final String nomPays;
+  final bool choixFavoris;
 
-  ListPlats({this.nomPays});
+  ListPlats({this.choixFavoris});
+
+  
 
   @override
   Widget build(BuildContext context) {
-    final plats = Provider.of<FournisseurPlats>(context).items;
-    
+    final plats = Provider.of<FournisseurPlats>(context);
+    final platInfos = choixFavoris? plats.platFavoris : plats.items;
    
 
     return ListView.builder(
       //physics: NeverScrollableScrollPhysics(),
       shrinkWrap: false,
       scrollDirection: Axis.horizontal,
-      itemCount: plats.length,
+      itemCount: platInfos.length,
         itemBuilder: (context, i) => ChangeNotifierProvider.value(
-          value: plats[i],
+          value: platInfos[i],
           child: PlatItem(
         ),
       )

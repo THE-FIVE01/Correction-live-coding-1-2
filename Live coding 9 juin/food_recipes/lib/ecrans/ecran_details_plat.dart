@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_recipes/ecrans/ecran_acceuil.dart';
+// import 'package:food_recipes/ecrans/ecran_acceuil.dart';
 import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +39,7 @@ class EcranDetailsPlats extends StatelessWidget {
                 fontWeight: FontWeight.bold
               ),
             ),
-            SizedBox(width: width * 0.1,),
+            SizedBox(width: width * 0.15,),
             Container(
               width: width * 0.5,
               height: height * 0.075,
@@ -83,11 +83,8 @@ class EcranDetailsPlats extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: FaIcon(FontAwesomeIcons.chevronLeft, color: Colors.black,),
+        iconTheme: IconThemeData(
+          color: Colors.black
         ),
         title: Container(
           width: width * 0.6,
@@ -101,7 +98,9 @@ class EcranDetailsPlats extends StatelessWidget {
         actions: [
           IconButton(
             icon: FaIcon(FontAwesomeIcons.heart, color: Colors.black, size: 25,),
-            onPressed: () {}
+            onPressed: () {
+              detailPlats.statusDuPlat();
+            }
           )
         ],
       ),

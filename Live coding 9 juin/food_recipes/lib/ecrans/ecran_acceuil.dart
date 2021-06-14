@@ -188,7 +188,7 @@ class _EcranAccueilState extends State<EcranAccueil> {
             ),
             //SizedBox(width: width * 0.03,),
             Expanded(
-              child: ListPlats()
+              child: ListPlats(choixFavoris: _favorisSelectionner,)
             ),
             
           ],
