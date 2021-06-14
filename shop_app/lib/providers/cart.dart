@@ -52,11 +52,12 @@ class Cart with ChangeNotifier {
       _items.putIfAbsent(
         productId,
         () => CartItem(
-            id: DateTime.now().toString(),
-            imageUrl:  url,
-            title: title,
-            price: price,
-            quantity: 1),
+          id: DateTime.now().toString(),
+          imageUrl:  url,
+          title: title,
+          price: price,
+          quantity: 1
+        ),
       );
     }
     notifyListeners();

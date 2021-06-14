@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipes/ecrans/ecran_details_plat.dart';
 import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
 import 'package:provider/provider.dart';
 import './ecrans/ecran_acceuil.dart';
@@ -9,7 +10,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (ctx) => EcranAccueil(),
+          EcranDetailsPlats.routeName: (ctx) => EcranDetailsPlats(),
         },
       ),
     );

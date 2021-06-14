@@ -7,22 +7,25 @@ import 'package:provider/provider.dart';
 
 
 class ListPlats extends StatelessWidget {
-  
+  final String nomPays;
+
+  ListPlats({this.nomPays});
+
   @override
   Widget build(BuildContext context) {
-    final plat = Provider.of<FournisseurPlats>(context).items;
+    final plats = Provider.of<FournisseurPlats>(context).items;
     
-    print(plat);
+   
 
     return ListView.builder(
       //physics: NeverScrollableScrollPhysics(),
       shrinkWrap: false,
       scrollDirection: Axis.horizontal,
-      itemCount: plat.length,
+      itemCount: plats.length,
         itemBuilder: (context, i) => ChangeNotifierProvider.value(
-          value: plat[i],
+          value: plats[i],
           child: PlatItem(
-          ),
+        ),
       )
     );
   }

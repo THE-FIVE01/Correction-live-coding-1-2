@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food_recipes/ecrans/ecran_details_plat.dart';
 import 'package:food_recipes/fournisseurs/plat.dart';
 import 'package:provider/provider.dart';
 
@@ -15,8 +16,9 @@ class PlatItem extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return InkWell(
+      
       onTap: () {
-        
+        Navigator.pushNamed(context, EcranDetailsPlats.routeName, arguments: plats.id);
       },
       child: Container(
         width: width * 0.50,
