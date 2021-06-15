@@ -94,7 +94,7 @@ class EcranDetailsPlats extends StatelessWidget {
                             FaIcon(FontAwesomeIcons.star, size: 30, color: Color(0xFFfeab04),),
                             SizedBox(height: height * 0.01,),
                             Text(
-                              detailPlats.like.toString(),
+                              detailPlats.etoile.toString(),
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.grey
@@ -168,7 +168,7 @@ class EcranDetailsPlats extends StatelessWidget {
                       ),
                       SizedBox(height: height * 0.006,),
                       Text(
-                        detailPlats.ingredients[i].quantite,
+                        detailPlats.ingredients[i].valeurUnite.toStringAsFixed(0) + ' ${detailPlats.ingredients[i].retourneUnite(detailPlats.ingredients[i].unite)}',
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 20,

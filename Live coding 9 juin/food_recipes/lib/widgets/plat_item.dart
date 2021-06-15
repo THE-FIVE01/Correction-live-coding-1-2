@@ -73,7 +73,7 @@ class PlatItem extends StatelessWidget {
                     children: [
                       FaIcon(FontAwesomeIcons.star, color: Colors.yellow[700], size: 15,),
                       Text(
-                        "${plats.like}",
+                        "${plats.etoile}",
                         style: TextStyle(
                           fontWeight: FontWeight.bold
                         ),

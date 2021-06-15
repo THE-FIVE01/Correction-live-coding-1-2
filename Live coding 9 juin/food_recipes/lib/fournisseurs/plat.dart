@@ -6,8 +6,8 @@ class Plat with ChangeNotifier {
   final int id;
   final String imagePlat;
   final String nom;
-  final int idPays;
-  final double like;
+  final List<int> idPays;
+  final double etoile;
   final int kcal;
   final int duree;
   final int prix;
@@ -20,7 +20,7 @@ class Plat with ChangeNotifier {
     @required this.imagePlat, 
     @required this.nom, 
     @required this.idPays,
-    this.like = 0.0, 
+    this.etoile = 0.0, 
     @required this.kcal, 
     @required this.duree, 
     @required this.prix,
