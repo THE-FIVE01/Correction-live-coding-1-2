@@ -11,7 +11,6 @@ class PlatItem extends StatelessWidget {
 
     final plats = Provider.of<Plat>(context, listen: false);
 
-
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 

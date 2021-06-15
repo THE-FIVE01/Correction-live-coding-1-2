@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
+import 'package:food_recipes/fournisseurs/pays.dart';
 import 'package:food_recipes/widgets/liste_plat.dart';
 import 'package:provider/provider.dart';
 
-import '../fournisseurs/pays.dart';
+
 
 enum OptionFiltrageFavoris {
   ProduitsFavoris,
@@ -25,7 +26,8 @@ class _EcranAccueilState extends State<EcranAccueil> {
 
   @override
   Widget build(BuildContext context) {
-   final plats = Provider.of<FournisseurPlats>(context).items;
+  //  final plats = Provider.of<FournisseurPlats>(context).items;
+   final pays = Provider.of<FounrisseurPays>(context).paysData;
    
   //final affichePlat = nompays ? plats: plats.nomPays;
     final width = MediaQuery.of(context).size.width;
@@ -48,8 +50,8 @@ class _EcranAccueilState extends State<EcranAccueil> {
         },
         backgroundColor: Color(0xFF29946B),
         
-        unselectedIconTheme: IconThemeData(color: Colors.red),
-        selectedIconTheme: IconThemeData(color: Colors.orange),
+        // unselectedIconTheme: IconThemeData(color: Colors.red),
+        // selectedIconTheme: IconThemeData(color: Colors.orange),
         // unselectedLabelStyle: TextStyle(color: Colors.white),
         // selectedLabelStyle: TextStyle(color: Colors.white),
         currentIndex: _selected,
@@ -188,7 +190,7 @@ class _EcranAccueilState extends State<EcranAccueil> {
             ),
             //SizedBox(width: width * 0.03,),
             Expanded(
-              child: ListPlats(choixFavoris: _favorisSelectionner,)
+              child: ListPlats()
             ),
             
           ],

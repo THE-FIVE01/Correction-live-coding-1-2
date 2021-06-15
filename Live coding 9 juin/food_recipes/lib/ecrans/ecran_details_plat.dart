@@ -18,68 +18,6 @@ class EcranDetailsPlats extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0xFFF8F8F8),
-      bottomNavigationBar: Container(
-        height: height * 0.12,
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: () {
-                // Navigator.pushReplacementNamed(context, EcranAccueil.routeName);
-              },
-              icon: FaIcon(FontAwesomeIcons.shoppingCart, size: 25, color: Colors.black,)
-            ),
-            SizedBox(width: width * 0.02,),
-            Text(
-              "Buy",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(width: width * 0.15,),
-            Container(
-              width: width * 0.5,
-              height: height * 0.075,
-              //color: Colors.white,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFAB04),
-                borderRadius: BorderRadius.circular(30)
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Start cooking",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-                    ),
-                  ),
-                  SizedBox(width: width * 0.04,),
-                 ClipRRect(
-                   borderRadius: BorderRadius.circular(30),
-                   child: Container(
-                     width: 40,
-                     height: 40,
-                     color: Colors.white,
-                     child: IconButton(
-                       onPressed: () {
-                         
-                       },
-                       icon: FaIcon(FontAwesomeIcons.chevronRight, size: 20, color: Color(0xFFFFAB04),),
-                     ),
-                   ),
-                 )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -243,6 +181,68 @@ class EcranDetailsPlats extends StatelessWidget {
               ),
             ),
             SizedBox(height: height * 0.02,),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: height * 0.12,
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: () {
+                // Navigator.pushReplacementNamed(context, EcranAccueil.routeName);
+              },
+              icon: FaIcon(FontAwesomeIcons.shoppingCart, size: 25, color: Colors.black,)
+            ),
+            SizedBox(width: width * 0.02,),
+            Text(
+              "Buy",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(width: width * 0.15,),
+            Container(
+              width: width * 0.5,
+              height: height * 0.075,
+              //color: Colors.white,
+              decoration: BoxDecoration(
+                color: Color(0xFFFFAB04),
+                borderRadius: BorderRadius.circular(30)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Start cooking",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                    ),
+                  ),
+                  SizedBox(width: width * 0.04,),
+                 ClipRRect(
+                   borderRadius: BorderRadius.circular(30),
+                   child: Container(
+                     width: 40,
+                     height: 40,
+                     color: Colors.white,
+                     child: IconButton(
+                       onPressed: () {
+                         
+                       },
+                       icon: FaIcon(FontAwesomeIcons.chevronRight, size: 20, color: Color(0xFFFFAB04),),
+                     ),
+                   ),
+                 )
+                ],
+              ),
+            )
           ],
         ),
       ),

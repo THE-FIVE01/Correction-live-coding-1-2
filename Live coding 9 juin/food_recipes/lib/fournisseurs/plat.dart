@@ -6,7 +6,7 @@ class Plat with ChangeNotifier {
   final int id;
   final String imagePlat;
   final String nom;
-  final String pays;
+  final int idPays;
   final double like;
   final int kcal;
   final int duree;
@@ -19,7 +19,7 @@ class Plat with ChangeNotifier {
     @required this.id, 
     @required this.imagePlat, 
     @required this.nom, 
-    @required this.pays,
+    @required this.idPays,
     this.like = 0.0, 
     @required this.kcal, 
     @required this.duree, 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes/ecrans/ecran_details_plat.dart';
 import 'package:food_recipes/fournisseurs/fournissseur_plats.dart';
+import 'package:food_recipes/fournisseurs/pays.dart';
+import 'package:food_recipes/widgets/liste_plat.dart';
 import 'package:provider/provider.dart';
 import './ecrans/ecran_acceuil.dart';
 
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => FournisseurPlats(),
+        ),
+         ChangeNotifierProvider(
+          create: (ctx) => FounrisseurPays(),
         )
       ],
       child: MaterialApp(
@@ -31,6 +36,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (ctx) => EcranAccueil(),
           EcranDetailsPlats.routeName: (ctx) => EcranDetailsPlats(),
+          
         },
       ),
     );

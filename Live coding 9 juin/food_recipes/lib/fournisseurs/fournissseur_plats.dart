@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes/fournisseurs/ingredient.dart';
-// import 'package:food_recipes/fournisseurs/pays.dart';
+import 'package:food_recipes/fournisseurs/pays.dart';
 import 'plat.dart';
 
 
@@ -11,7 +11,7 @@ class FournisseurPlats with ChangeNotifier {
       id: 1,
       imagePlat: 'images/risotto-printanier-vegetarien.jpeg',
       nom: 'Risotto printanier végétarien',
-      pays: 'Italie',
+      idPays: 1,
       like: 5.3,
       kcal: 200,
       duree: 30,
@@ -28,7 +28,7 @@ class FournisseurPlats with ChangeNotifier {
       id: 2,
       imagePlat: 'images/cannellonnis-a-la-ricotta.jpeg',
       nom: 'Cannellonnis à la ricotta',
-      pays: 'Italie',
+      idPays: 1,
       like: 4.5,
       kcal: 300,
       duree: 105,
@@ -45,7 +45,7 @@ class FournisseurPlats with ChangeNotifier {
       id: 3,
       imagePlat: 'images/pavlova-au-thermomix.jpeg',
       nom: 'Pavlova au Thermomix',
-      pays: 'Australie',
+      idPays: 4,
       like: 7.0,
       kcal: 210,
       duree: 180,
@@ -69,6 +69,15 @@ class FournisseurPlats with ChangeNotifier {
   List<Plat> get platFavoris {
     return _items.where((platItem) => platItem.estFavoris).toList();
   }
+ 
+
+
+
+  // List<Plat> get platParPays {
+  //   return _items.where((platPays) => platPays.idPays == );
+  // }
+
+  
   // //  Liste de produists par pays
   
   // List<Plat> get platParPays {
