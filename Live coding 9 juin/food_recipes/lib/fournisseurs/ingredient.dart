@@ -28,7 +28,7 @@ class Ingredients with ChangeNotifier {
     this.unite
     });
 
-  retourneUnite(Unite unite) {
+retourneUnite(Unite unite) {
   switch (unite) {
     case Unite.kg:
       return 'kg';
