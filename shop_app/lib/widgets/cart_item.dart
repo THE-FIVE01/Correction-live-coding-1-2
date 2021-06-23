@@ -29,6 +29,26 @@ class CartItem extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
       ),
       direction: DismissDirection.endToStart,
+      confirmDismiss: (direction) {
+        return showDialog(context: context, builder: (ctx) => AlertDialog(
+          title: Text("Êtes-vous sure?"),
+          content: Text("Voulez-vous retirer cet élément du panier?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              }, 
+              child: Text("Non")
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              }, 
+              child: Text("Oui")
+            )
+          ],
+        ));
+      },
       onDismissed: (direction) {
         Provider.of<Cart>(context, listen: false).removeItem(productId);
       },
