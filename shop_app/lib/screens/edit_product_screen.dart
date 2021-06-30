@@ -45,6 +45,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
   }
 
   void _saveForm() {
+    final isValid =_form.currentState.validate();
+    if (!isValid) {
+      return;
+    }
     _form.currentState.save();
     print(_editedProduct.title);
     print(_editedProduct.price);
@@ -86,6 +90,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 onFieldSubmitted: (_) {
                   FocusScope.of(context).requestFocus(_priceFocusNode);
                 },
+                validator: (value) {
+                  if (value.isEmpty) {
+                   return "Veuiller entrer un bon titre";
+                  }
+                  return null;
+                },
                 onSaved: (value) {
                   _editedProduct = Product(
                     id: null, 
@@ -106,12 +116,24 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 onFieldSubmitted: (_) {
                   FocusScope.of(context).requestFocus(_descriptionFocusNode);
                 },
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return "Entrer le prix SVP";
+                  }
+                  if (double.tryParse(value) == null) {
+                    return "Entrer un nombre valide SVP";
+                  }
+                  if (double.parse(value) <= 0){
+                    return "Entrer un prix supérieur à 0";
+                  }
+                  return null;
+                },
                 onSaved: (value) {
                   _editedProduct = Product(
                     id: null, 
                     title: _editedProduct.title, 
                     description: _editedProduct.description, 
-                    price: double.parse(value), 
+                    price: double.tryParse(value), 
                     imageUrl: _editedProduct.imageUrl
                   );
                 },
