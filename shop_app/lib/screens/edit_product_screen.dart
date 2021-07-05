@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/providers/products.dart';
 import '../providers/product.dart';
 
 
@@ -20,12 +22,23 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   var _editedProduct = Product(id: null, title: '', description: '', price: 0, imageUrl: 'imageUrl');
 
+  var _isInit = true;
+
   @override
   void initState() {
     _imageUrlFocusNode.addListener(_updateImageUrl);
     super.initState();
   }
-
+  
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      final productId = ModalRoute.of(context).settings.arguments as String;
+      _editedProduct = Provider.of<Products>(context).findById(productId);
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
   @override
   void dispose() {
     _imageUrlFocusNode.removeListener(_updateImageUrl);
@@ -38,9 +51,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   void _updateImageUrl() {
     if (!_imageUrlFocusNode.hasFocus) {
-      setState(() {
-        
-      });
+      if ((_imageUrlController.text.startsWith("http://") && 
+          _imageUrlController.text.startsWith("https://")) ||
+          (!_imageUrlController.text.trim().endsWith(".png") && 
+          !_imageUrlController.text.trim().endsWith(".jpg") && 
+          !_imageUrlController.text.trim().endsWith(".jpeg"))
+      )
+      return;
+    
+      setState((){});
     }
   }
 
@@ -50,10 +69,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
       return;
     }
     _form.currentState.save();
-    print(_editedProduct.title);
-    print(_editedProduct.price);
-    print(_editedProduct.description);
-    print(_editedProduct.imageUrl);
+    Provider.of<Products>(context, listen: false).addProduct(_editedProduct); 
+    Navigator.of(context).pop();
+    // print(_editedProduct.title);
+    // print(_editedProduct.price);
+    // print(_editedProduct.description);
+    // print(_editedProduct.imageUrl);
   }
 
   
@@ -193,6 +214,18 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       focusNode: _imageUrlFocusNode,
                       onFieldSubmitted: (_) {
                         _saveForm();
+                      },
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Entrer une url d'image";
+                        }
+                        if ((!value.trim().startsWith("http://")) && (!value.trim().startsWith("https://"))) {
+                          return "Entrer une url valide SVP";
+                        }
+                        if ((!value.trim().endsWith(".png")) && (!value.trim().endsWith(".jpg")) && (!value.trim().endsWith(".jpeg"))) {
+                          return "Entrer une image valide";
+                        }
+                        return null;
                       },
                        onSaved: (value) {
                         _editedProduct = Product(
