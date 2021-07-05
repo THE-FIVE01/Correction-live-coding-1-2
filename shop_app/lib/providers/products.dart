@@ -57,28 +57,31 @@ class Products with ChangeNotifier {
     return items.firstWhere((prod) => prod.id == id);
   }
 // Fonction d'ajout un nouveau produit
-  void addProduct(Product product) {
+  Future<void> addProduct(Product product) {
     var url = Uri.parse("https://shop-app-7a29c-default-rtdb.firebaseio.com/products.json");
-    http.post(url, body: json.encode({
+    return http.post(url, body: json.encode({
       'title': product.title,
       'description': product.description,
       'price': product.price,
       'imageUrl': product.imageUrl,
       'isFavorite': product.isFavorite
-    }),).then((respense) {
+    }),).then((response) {
       final newProduct = Product(
       title: product.title,
       price: product.price,
       description: product.description,
       imageUrl: product.imageUrl,
-      id: DateTime.now().toString()
+      id: json.decode(response.body)['name'],
     );
     _items.add(newProduct);
     //_items.insert(0, newProduct);
 
     notifyListeners();
     }
-    );
+    ).catchError((error) {
+      print(error);
+      throw error;
+    });
     
   }
 

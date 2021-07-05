@@ -28,6 +28,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     'imageUrl': ''
   };
   var _isInit = true;
+  var _isLoading = false;
 
   @override
   void initState() {
@@ -85,15 +86,37 @@ class _EditProductScreenState extends State<EditProductScreen> {
       return;
     }
     _form.currentState.save();
+    setState(() {
+      _isLoading = true;
+    });
     // Si l'id du produit  est différent de null on modifie
     if (_editedProduct.id != null) {
       Provider.of<Products>(context, listen: false).updateproduct(_editedProduct.id, _editedProduct); 
+      Navigator.of(context).pop();
+      setState(() {
+        _isLoading = false;
+      });
     } // on ajoute un nouveau produit si l'id es null
     else {
-      Provider.of<Products>(context, listen: false).addProduct(_editedProduct); 
+      Provider.of<Products>(context, listen: false)
+      .addProduct(_editedProduct)
+      .catchError((error) {
+        showDialog(context: context, builder: (ctx) => AlertDialog(title: Text("Une érreure est survenue"), 
+        content: Text("Something went wrong"),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(ctx).pop(), child: Text("Ok"))
+        ],
+        ));
+      })
+      .then((_) {
+        Navigator.of(context).pop();
+        setState(() {
+          _isLoading = false;
+        });
+      }); 
     }
     
-    Navigator.of(context).pop();
+   //Navigator.of(context).pop();
 
   }
 
@@ -117,7 +140,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
           )
         ]
       ),
-      body: Padding(
+      body: _isLoading? Center(
+        child: CircularProgressIndicator(),
+      ) : Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _form,
