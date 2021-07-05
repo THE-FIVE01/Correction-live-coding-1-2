@@ -28,10 +28,10 @@ class _FormulairesState extends State<Formulaires> {
     }
       _formkey.currentState!.save();
       
-var url = Uri.parse('https://chats-a183e-default-rtdb.firebaseio.com/users.json');
-var response = await http.post(url, body: json.encode(database));
-print('Response status: ${response.statusCode}');
-print('Response body: ${response.body}');
+    var url = Uri.parse('https://chats-a183e-default-rtdb.firebaseio.com/users.json');
+    var response = await http.post(url, body: json.encode(database));
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
 
   }
  var erro ='';

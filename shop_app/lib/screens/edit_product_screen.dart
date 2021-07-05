@@ -91,8 +91,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   FocusScope.of(context).requestFocus(_priceFocusNode);
                 },
                 validator: (value) {
-                  if (value.isEmpty) {
-                   return "Veuiller entrer un bon titre";
+                  if (value.trim().isEmpty) {
+                   return "Veuiller entrer un titre";
                   }
                   return null;
                 },
@@ -145,6 +145,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 keyboardType: TextInputType.multiline,
                 maxLines: 3,
                 focusNode: _descriptionFocusNode,
+                validator: (value) {
+                  if(value.isEmpty) {
+                    return "Entrer une description SVP";
+                  }
+                  if (value.length < 10) {
+                    return "Entrer au moin 10 caractères pour la description SVP";
+                  }
+                  return null;
+                },
                 onSaved: (value) {
                   _editedProduct = Product(
                     id: null, 
