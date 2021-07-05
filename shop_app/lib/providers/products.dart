@@ -66,4 +66,22 @@ class Products with ChangeNotifier {
 
     notifyListeners();
   }
+
+  // Fonction d'edition d'un produit
+
+  void updateproduct(String id, Product newProduct) {
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      _items[prodIndex] = newProduct;
+      notifyListeners();
+    } else {
+      print('...');
+    }
+  }
+
+  // Fonction de supression de produit
+  void deleteProduct(String id) {
+    _items.removeWhere((prod) => prod.id == id);
+    notifyListeners();
+  }
 }
