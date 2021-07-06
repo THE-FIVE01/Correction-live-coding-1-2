@@ -49,9 +49,9 @@ class Orders with ChangeNotifier {
       );
     });
 
-    _orders = loadedOrders;
+    _orders = loadedOrders.reversed.toList();
 
-    print(json.decode(response.body));
+    //print(json.decode(response.body));
   }
 
   Future<void> addOrder(List<CartItem> cartProducts, double total) async {

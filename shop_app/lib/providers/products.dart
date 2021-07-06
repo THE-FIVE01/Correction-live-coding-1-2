@@ -82,7 +82,7 @@ class Products with ChangeNotifier {
       _items = loadedProducts;
       notifyListeners();
 
-      print(json.decode(response.body));
+      //print(json.decode(response.body));
     } catch (error) {
       throw(error);
     }
