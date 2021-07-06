@@ -15,17 +15,20 @@ class _FormulaireScreenState extends State<FormulaireScreen> {
 
   Map _dataForm = {
     "nom": "",
-    "email": ""
+    "email": "",
+    "contact": ""
   };
 
   void _saveForm() async {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      var url = Uri.parse('https://shop-app-7a29c-default-rtdb.firebaseio.com/users.json');
+      var url  = Uri.parse("https://formulaire-c7351-default-rtdb.firebaseio.com/users.json");
       var response = await http.post(url, body: json.encode(_dataForm));
       print('Response status: ${response.statusCode}');
       print('Response body: ${response.body}');
+  
     }
+   
   }
 
   @override
@@ -34,100 +37,133 @@ class _FormulaireScreenState extends State<FormulaireScreen> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-     appBar: AppBar(
-       title: Text("Formulaire d'inscription"),
-       centerTitle: true,
-     ),
-     body: SafeArea(
-       child: Center(
-         child: Container(
-           width: width * 0.98,
-           padding: EdgeInsets.symmetric(horizontal: 15),
-           //height: height / 2,
-           //color: Colors.red,
-           child: ListView(
-             children: [
-               Form(
-                 key: _formKey,
-                 child: Column(
-                   mainAxisAlignment: MainAxisAlignment.start,
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Container(
-                       width: width * 0.96,
-                       height: height * 0.08,
-                       ///color: Colors.red,
-                       child: Center(
-                         child: TextFormField(
-                           validator: (value) {
-                             if (value.trim().isEmpty) {
-                               return "Entrer un nom";
-                             }
-                             return null;
-                           },
-                           onSaved: (value) {
-                             _dataForm["nom"] = value;
-                           },
-                           keyboardType: TextInputType.text,
-                           decoration: InputDecoration(
-                             hintText: "Entrer votre nom",
-                             fillColor: Colors.grey[300],
-                             filled: true,
-                             border: UnderlineInputBorder(
-                               borderSide: BorderSide.none,
-                               borderRadius: BorderRadius.circular(30)
-                             )
-                           ),
-                         ),
-                       ),
-                     ),
-                      Container(
-                       width: width * 0.96,
-                       height: height * 0.08,
-                       ///color: Colors.red,
-                       child: Center(
-                         child: TextFormField(
-                           
-                           validator: (value) {
-                             if (value.trim().isEmpty && value.contains("@")) {
-                               return "Entrer votre email";
-                             }
-                             return null;
-                           },
-                           onSaved: (value) {
-                             _dataForm["email"] = value;
-                           },
-                           
-                           keyboardType: TextInputType.text,
-                           decoration: InputDecoration(
-                             hintText: "Entrer votre email",
-                             fillColor: Colors.grey[300],
-                             filled: true,
-                             border: UnderlineInputBorder(
-                               borderSide: BorderSide.none,
-                               borderRadius: BorderRadius.circular(30)
-                             )
-                           ),
-                         ),
-                       ),
-                     ),
-                     Center(
-                       child: ElevatedButton(
-                         onPressed: () {
-                           _saveForm();
-                         }, 
-                         child: Text("Valider")
-                         ),
-                     )
-                   ],
+      appBar: AppBar(
+        title: Text("Formulaire d'inscription"),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            width: width * 0.98,
+            //color: Colors.red,
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: ListView(
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Column(
 
-                 )
+                    children: [
+                      SizedBox(height: height * 0.03,),
+                      Container(
+                        width: width * 0.96,
+                        height: height * 0.08,
+                        //color: Colors.orange,
+                        child: Center(
+                          child: TextFormField(
+                            validator: (value) {
+                              if (value.trim().isEmpty) {
+                                return "Veuillez entrer un nom svp!";
+                              }
+                              return null;
+                            },
+                            onSaved: (val) {
+                              _dataForm["nom"] = val;
+                            },
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                              hintText: "Entrer vorte nom",
+                              fillColor: Colors.grey[300],
+                              filled: true,
+                              border: UnderlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(30)
+                              ),
+                            ),
+                          ),
+                        )
+                        ,
+                      ),
+                      Container(
+                        width: width * 0.96,
+                        height: height * 0.08,
+                        //color: Colors.orange,
+                        child: Center(
+                          child: TextFormField(
+                            validator: (value) {
+                              if (value.trim().isEmpty && value.contains("@")) {
+                                return "Veuillez entrer votre email!";
+                              }
+                              return null;
+                            },
+                            onSaved: (val) {
+                              _dataForm["email"] = val;
+                            },
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                              hintText: "Entrer votre email",
+                              fillColor: Colors.grey[300],
+                              filled: true,
+                              border: UnderlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(30)
+                              ),
+                            ),
+                          ),
+                        )
+                        ,
+                      ),
+                      Container(
+                        width: width * 0.96,
+                        height: height * 0.08,
+                        //color: Colors.orange,
+                        child: Center(
+                          child: TextFormField(
+                            validator: (value) {
+                              if (value.trim().isEmpty) {
+                                return "Veuillez entrer votre contact!";
+                              }
+                              return null;
+                            },
+                            onSaved: (val) {
+                              _dataForm["contact"] = val;
+                            },
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              hintText: "Entrer votre contact",
+                              fillColor: Colors.grey[300],
+                              filled: true,
+                              border: UnderlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(30)
+                              ),
+                            ),
+                          ),
+                        )
+                        ,
+                      ),
+                      Center(
+                        child: Container(
+                          width: width * 0.3,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              _saveForm();
+                            }, 
+                            child: Text(
+                              "Valider",
+                              style: TextStyle(fontSize: 20),
+                            )
+                          ),
+                        ),
+                      )
+                    ],
+                  )
                 )
-             ],
-           ),
-         ),
-       ),
-     ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

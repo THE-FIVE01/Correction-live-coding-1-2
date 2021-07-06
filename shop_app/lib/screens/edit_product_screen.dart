@@ -92,30 +92,38 @@ class _EditProductScreenState extends State<EditProductScreen> {
     // Si l'id du produit  est différent de null on modifie
     if (_editedProduct.id != null) {
       Provider.of<Products>(context, listen: false).updateproduct(_editedProduct.id, _editedProduct); 
-      Navigator.of(context).pop();
-      setState(() {
-        _isLoading = false;
-      });
+     
     } // on ajoute un nouveau produit si l'id es null
     else {
       try {
         await Provider.of<Products>(context, listen: false)
       .addProduct(_editedProduct);
       } catch (error) {
-        await  showDialog(context: context, builder: (ctx) => AlertDialog(title: Text("Une érreure est survenue"), 
-          content: Text("Something went wrong"),
+        await showDialog(context: context, builder: (ctx) => AlertDialog(title: Text("Une érreure est survenue"), 
+          content: Text("Quelque chose a mal tourné"),
           actions: [
-            TextButton(onPressed: () => Navigator.of(ctx).pop(), child: Text("Ok"))
+            TextButton(
+              child: Text("Ok"),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              }, 
+            )
           ],
           )
         );
-      } finally{
-           Navigator.of(context).pop();
-        setState(() {
-          _isLoading = false;
-        });
       }
+      // finally{
+      //   setState(() {
+      //     _isLoading = false;
+      //   });
+      //   Navigator.of(context).pop();
+      // }
     }
+    Navigator.of(context).pop();
+      setState(() {
+        _isLoading = false;
+      }
+    );
     
    //Navigator.of(context).pop();
 

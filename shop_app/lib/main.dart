@@ -42,8 +42,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          // "/": (ctx) => ProductsOverviewScreen(),
-          "/": (ctx) => FormulaireScreen(),
+          "/": (ctx) => ProductsOverviewScreen(),
+          //"/": (ctx) => FormulaireScreen(),
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
           OrdersScreen.routeName: (ctx) => OrdersScreen(),
