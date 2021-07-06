@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './cart.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 
 // gestion de la liste des produits commander
@@ -24,13 +26,32 @@ class Orders with ChangeNotifier {
     return [..._orders];
   }
 
-  void addOrder(List<CartItem> cartProducts, double total) {
+  Future<void> fetchAndSetOrders() async {
+    final url = Uri.parse("https://shop-app-7a29c-default-rtdb.firebaseio.com/orders.json");
+    final response = await http.get(url);
+
+    print(json.decode(response.body));
+  }
+
+  Future<void> addOrder(List<CartItem> cartProducts, double total) async {
+    final url = Uri.parse("https://shop-app-7a29c-default-rtdb.firebaseio.com/orders.json");
+    final timestamp = DateTime.now();
+    final response = await http.post(url, body: json.encode({
+      'amount': total,
+      'dateTime': DateTime.now().toIso8601String(),
+      'products': cartProducts.map((cp) => {
+        'id': cp.id,
+        'title': cp.title,
+        'quantity': cp.quantity,
+        'price': cp.price
+      }).toList()
+    }),);
     _orders.insert(
       0,
       OrderItem(
-        id: DateTime.now().toString(),
+        id: json.decode(response.body)['name'],
         amount: total,
-        dateTime: DateTime.now(),
+        dateTime: timestamp,
         products: cartProducts
       ),
     );
