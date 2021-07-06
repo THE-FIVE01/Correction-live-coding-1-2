@@ -148,7 +148,7 @@ class Products with ChangeNotifier {
     
     http.delete(url).then((response) {
       if (response.statusCode >= 400) {
-        
+        throw Exception();
       }
       existingProduct = null;
     }).catchError((_) {
