@@ -85,7 +85,7 @@ class Products with ChangeNotifier {
       //print(json.decode(response.body));
     } catch (error) {
       throw(error);
-    }
+    } 
   }
 
 
