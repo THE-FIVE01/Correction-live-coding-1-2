@@ -1,7 +1,11 @@
+import 'package:connect_users/ecrans/decision_tree.dart';
 import 'package:flutter/material.dart';
-import '../ecrans/formulaire.dart';
+import '../ecrans/decision_tree.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -14,10 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       debugShowCheckedModeBanner: false,
-      // home: MyHomePage(title: 'Flutter Demo Home Page'),
       initialRoute: "/",
       routes: {
-        '/': (ctx) => Formulaire(),
+        '/': (ctx) => DecisionTree(),
       }
     );
   }
